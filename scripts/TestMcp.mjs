@@ -62,8 +62,17 @@ try {
   for (const Call of Calls) {
     const Tool = Catalog.tools.find((Item) => Item.name === Call.name);
     if (!Tool) throw new Error("Unknown MCP tool: " + Call.name);
-    const Routes = ["instance_id", "studio_id", "multiplayer_group_id"]
+    let Routes = ["instance_id", "studio_id", "multiplayer_group_id"]
       .filter((Field) => Field in (Tool.inputSchema?.properties ?? {}));
+    if (Call.name === "manage_instance") {
+      const Action = Call.arguments?.action;
+      if (Call.arguments?.instance_id && Call.arguments?.launch_id) {
+        throw new Error(Call.name + " requires exactly one explicit instance_id or launch_id");
+      }
+      if (Action === "launch" || Action === "list_place_versions") continue;
+      if (Action === "authorize" || Action === "complete") Routes = ["launch_id"];
+      if (Action === "close" || Action === "status") Routes = ["instance_id", "launch_id"];
+    }
     if (Routes.length && !Routes.some((Field) =>
       typeof Call.arguments?.[Field] === "string" && Call.arguments[Field].trim())) {
       throw new Error(Call.name + " requires an explicit " + Routes.join(" or "));

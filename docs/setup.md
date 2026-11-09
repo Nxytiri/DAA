@@ -100,9 +100,11 @@ containing an array of `{ "name": "...", "arguments": {} }` requests.
 Keep a playtest sequence in one call so its temporary MCP server stays connected.
 Only its own spawned process tree is stopped on exit.
 
-Enumerate Studio instances before mutations and pass the exact instance ID to every
-tool call. Local places have place ID zero; confirm their filename as well.
-The helper preflights every scoped call in a sequence for an explicit instance ID.
+Enumerate Studio instances before mutations and pass the exact instance ID to operations
+on an existing Studio instance. Local places have place ID zero; confirm their filename as well.
+The helper preflights the entire sequence before dispatch. Process-management status/close
+accept exactly one `instance_id` or `launch_id`; authorization/completion use `launch_id`.
+Launching a new process or reading place revisions does not require an existing instance ID.
 Do not let an agent guess which of multiple Studio windows is safe to edit.
 The Windows built-in launcher runs from its own directory; npm MCP servers use `cmd.exe /c`.
 [Official Studio docs](https://create.roblox.com/docs/studio/mcp) and

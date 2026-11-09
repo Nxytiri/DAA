@@ -9,6 +9,7 @@ Read only the pages needed for the current task.
 | [Conventions](conventions.md) | Strict typing, OOP, naming, authorship, comments |
 | [Agent workflow](agents.md) | Native configs, specialized roles, bounded delegation |
 | [Lore reference](lore.md) | Blackridge context and authoritative public archive |
+| [Final repository review](reviews/2026-11-09-final-review.md) | Fixed audit findings, verification evidence, and scope limits |
 | [Tool versions](../aftman.toml) | Pinned command-line tools |
 | [Package versions](../wally.toml) | Eighteen direct dependencies; lockfile pins transitive dependencies |
 | [Approved design](superpowers/specs/2026-11-08-repository-provisioning-design.md) | Scope and decisions, including subsequent owner amendments |

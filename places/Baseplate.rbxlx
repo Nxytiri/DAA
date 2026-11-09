@@ -18478,10 +18478,13 @@ end
 --//2026-11-08
 --!strict
 
+local LogService = game:GetService("LogService")
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local ServerScriptService = game:GetService("ServerScriptService")
-local Log = require(game:GetService("ReplicatedStorage").DAA.Packages.Log)
+local Log = require(ReplicatedStorage.DAA.Packages.Log)
+local Trove = require(ReplicatedStorage.DAA.Packages.Trove)
 local Logger = Log.new()
 
 return function(Case: string?): ()
@@ -18493,7 +18496,8 @@ return function(Case: string?): ()
 	local Template = DAA:WaitForChild("Bootstrap")
 	assert(Template:IsA("BaseScript"), "Production bootstrap missing")
 
-	local TestRoot = Instance.new("Folder")
+	local TestTrove = Trove.new()
+	local TestRoot = TestTrove:Add(Instance.new("Folder"))
 	TestRoot.Name = "DAABootstrapCheck"
 	local Fixtures = script.Parent.Fixtures:Clone()
 	Fixtures.Name = if IsServer then "Services" else "Controllers"
@@ -18509,6 +18513,17 @@ return function(Case: string?): ()
 	Bootstrap.Enabled = false
 	Bootstrap.Parent = TestRoot
 	TestRoot.Parent = Parent
+	local StartFailureReported = false
+	if Case == "StartFailure" then
+		TestTrove:Connect(LogService.MessageOut, function(Message: string): ()
+			if
+				string.find(Message, "[DAA/StartFailure] Start failed:", 1, true)
+				and string.find(Message, "EXPECTED_START_FAILURE", 1, true)
+			then
+				StartFailureReported = true
+			end
+		end)
+	end
 	Bootstrap.Enabled = true
 
 	local Success, Message = pcall(function(): unknown
@@ -18538,6 +18553,11 @@ return function(Case: string?): ()
 		assert(SecondProbe:GetAttribute("Started") == true, "Second startup hook did not finish")
 		if Case == "StartFailure" then
 			assert(Fixtures.StartFailure:GetAttribute("Attempted") == true, "Start failure was not reached")
+			local ReportDeadline = os.clock() + 5
+			while not StartFailureReported and os.clock() < ReportDeadline do
+				task.wait()
+			end
+			assert(StartFailureReported, "Bootstrap did not report the Start failure with module context")
 		end
 		assert(
 			Fixtures.Helpers.DoNotStart:GetAttribute("Started") == nil,
@@ -18545,7 +18565,7 @@ return function(Case: string?): ()
 		)
 		return nil
 	end)
-	TestRoot:Destroy()
+	TestTrove:Destroy()
 	assert(Success, tostring(Message))
 	Logger:AtInfo():Log("Bootstrap checks passed: " .. (if IsServer then "server" else "client"))
 end

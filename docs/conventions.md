@@ -60,7 +60,9 @@ constructing every package: use each one when its responsibility is needed.
 | Persistent profiles and session ownership | ProfileStore, server only |
 
 `scripts/Check.ps1` runs Selene with `package-policy.yml`: raw `print` and `warn`,
-including aliases of those globals, are errors in first-party Roblox code and Studio tests.
+including multiline aliases of those globals, are undefined in the first-party Roblox
+standard library. Both `.lua` and `.luau` files are checked. Removing these globals avoids
+Selene's line-sensitive deprecation analysis; use Log instead of declaring them locally.
 Other package responsibilities require semantic review; implementers and reviewers must check
 the table above. Do not suppress the lint to bypass this policy.
 

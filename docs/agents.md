@@ -31,6 +31,11 @@ design/plan workflow. Dispatch a narrow worker with: purpose, relevant spec path
 files, exact acceptance criteria, and necessary interfaces. Use a clean context rather
 than copying the whole chat. One writer owns each file set.
 
+Include the base/head diff or changed-file excerpts, relevant external API documentation,
+and verification results in review handoffs. Restricted Claude and Antigravity reviewers
+have file-reading tools; the coordinator supplies shell/MCP evidence instead of granting
+them mutation capabilities. Reviewers must flag missing evidence rather than invent results.
+
 After implementation, use a fresh reviewer for specification compliance. Resolve findings,
 then use a fresh quality review for correctness, security, error handling, typing, cleanup,
 and unnecessary complexity. Use the verifier for checks with noisy logs. Parallelize only

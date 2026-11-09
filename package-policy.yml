@@ -1,13 +1,6 @@
+base: roblox
 globals:
   print:
-    args:
-      - type: "..."
-        required: false
-    deprecated:
-      message: "Use the installed Log package: Logger:AtInfo():Log(message)."
+    removed: true
   warn:
-    args:
-      - type: "..."
-        required: false
-    deprecated:
-      message: "Use the installed Log package: Logger:AtWarning():Log(message)."
+    removed: true

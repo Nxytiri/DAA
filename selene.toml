@@ -1,4 +1,4 @@
-std = "package-policy+luau+roblox"
+std = "package-policy"
 
 [lints]
 deprecated = "deny"
