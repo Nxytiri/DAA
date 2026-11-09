@@ -53,15 +53,20 @@ local test place. No local world content enters the staging project.
 There is exactly one authored executable server Script and one authored client
 LocalScript in the staging code tree. All other runtime first-party code is
 ModuleScripts. Each entry point loads its own flat startup folder through
-Sleitnick Loader, then starts the loaded modules. Shared utilities and nested
+Sleitnick Loader and waits for every require to finish. It then calls every Init
+hook synchronously and dispatches Start hooks independently through Promise.
+A require or Init error halts that bootstrap and prevents all Start hooks;
+Start failures are reported and isolated so unrelated modules can continue.
+Shared utilities and nested
 helpers are never recursively auto-started. Startup modules do not yield or
 perform work at require time; asynchronous startup dependencies must be explicit.
 Modules communicate through direct requires, Signal, and Comm where appropriate.
 No service locator, dependency container, or custom loader framework is added.
 
-The builder may choose the smallest typed lifecycle compatible with Loader.
-Document its exact contract and failure behavior, and add a meaningful startup
-check. Bootstrap does not invent example services solely to fill folders.
+Use the typed Init/Start lifecycle without adding a second framework. OOP is
+the default for stateful systems; stateless functions remain simple functions.
+Graceful recovery is the default where safe, with hard errors for critical
+invariants. Bootstrap does not invent example services solely to fill folders.
 
 ## Rojo boundaries
 
@@ -113,6 +118,8 @@ Requested Wally dependencies, researched versions:
 | TableUtil | sleitnick/table-util | 1.2.1 | shared |
 | WaitFor | sleitnick/wait-for | 1.0.0 | shared |
 | Timer | sleitnick/timer | 2.0.0 | shared |
+| Silo | sleitnick/silo | 0.2.0 | shared |
+| Option | sleitnick/option | 1.0.5 | shared |
 | ProfileStore | lm-loleris/profilestore | 1.0.3 | server only |
 
 ProfileStore's official repository is MadStudioRoblox/ProfileStore, authored by
@@ -177,7 +184,7 @@ Prefer direct, small solutions and installed libraries; no speculative framework
 
 ## Acceptance and evidence
 
-1. A clean checkout installs pinned tools and all sixteen dependencies using the
+1. A clean checkout installs pinned tools and all eighteen dependencies using the
    documented Aftman/Wally workflow; commands resolve the intended versions.
 2. Formatting and strict Luau analysis pass with Roblox and dependency types.
 3. Focused dry-run checks pass; both Rojo projects build successfully.
@@ -212,4 +219,3 @@ No remote push, staging sync, cloud upload, or publication is part of acceptance
   [custom agents](https://antigravity.google/docs/subagents?tab=cli).
 
 Context7 was consulted for Rojo, Claude Code, and Antigravity CLI documentation.
-

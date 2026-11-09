@@ -53,7 +53,10 @@
         "Fixtures": {
           "$path": "tests/Fixtures"
         },
-        "$path": "tests/Studio"
+        "$path": "tests/Studio",
+        "Failures": {
+          "$path": "tests/Failures"
+        }
       }
     }
   }

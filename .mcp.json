@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "Roblox_Studio": {
+      "type": "stdio",
+      "command": "cmd.exe",
+      "args": [
+        "/d",
+        "/c",
+        "cd /d %LOCALAPPDATA%\\Roblox && .\\mcp.bat"
+      ]
+    },
+    "daa-studio": {
+      "type": "stdio",
+      "command": "cmd.exe",
+      "args": [
+        "/d",
+        "/c",
+        "npx",
+        "-y",
+        "@chrrxs/robloxstudio-mcp@3.4.3",
+        "--auto-install-plugin"
+      ]
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  }
+}

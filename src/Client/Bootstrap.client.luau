@@ -7,8 +7,17 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local DAA = ReplicatedStorage:WaitForChild("DAA")
 local Loader = require(DAA:WaitForChild("Packages"):WaitForChild("Loader"))
+local Promise = require(DAA.Packages:WaitForChild("Promise"))
 local Types = require(DAA:WaitForChild("Shared"):WaitForChild("Types"))
 
 local Controllers: { [string]: Types.Startup } =
 	Loader.LoadChildren(script.Parent:WaitForChild("Controllers"))
-Loader.SpawnAll(Controllers, "OnStart")
+for _, Controller in Controllers do
+	Controller:Init()
+end
+
+for Name, Controller in Controllers do
+	Promise.try(Controller.Start, Controller):catch(function(Message: unknown)
+		warn(("[DAA/%s] Start failed: %s"):format(Name, tostring(Message)))
+	end)
+end

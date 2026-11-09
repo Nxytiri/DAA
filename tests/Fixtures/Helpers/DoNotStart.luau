@@ -5,7 +5,9 @@
 
 local DoNotStart = {}
 
-function DoNotStart.OnStart(): ()
+function DoNotStart.Init(): () end
+
+function DoNotStart.Start(): ()
 	script:SetAttribute("Started", true)
 end
 

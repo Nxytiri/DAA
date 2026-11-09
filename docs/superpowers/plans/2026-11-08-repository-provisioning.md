@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- Bootstrap and tooling only; Aftman + Wally; all sixteen requested packages.
+- Bootstrap and tooling only; Aftman + Wally; all eighteen requested packages.
 - Exactly one production server Script and one client LocalScript; other code is modules.
 - Strict first-party Luau with the owner's three-line author header, PascalCase, UPPER_SNAKE_CASE constants, and private `_camelCase` fields.
 - No local world/test content in staging and no publishing, cloud upload, or remote push.
@@ -47,7 +47,7 @@ Implement inline because the toolchain, sourcemap, and bootstrap share interface
 
 **Files:** `src/Server/Bootstrap.server.luau`, `src/Client/Bootstrap.client.luau`, `src/Server/Services/init.meta.json`, `src/Client/Controllers/init.meta.json`, `src/Shared/init.meta.json`, `tests/Studio/Bootstrap.spec.luau`, `tests/VerifyPlace.luau`, `scripts/Check.ps1`, `scripts/Serve.ps1`.
 
-**Interfaces:** Bootstrap calls `Loader.LoadChildren` on Services/Controllers and `Loader.SpawnAll(..., "OnStart")`. Startup modules expose `OnStart(self): ()`; no ordering dependencies. Tests are local-only modules. Check formats, analyzes, builds, and inspects output. Serve selects Local or Staging explicitly with distinct ports.
+**Interfaces:** Bootstrap calls `Loader.LoadChildren` on Services/Controllers, waits for all requires, runs every `Init(self): ()` synchronously, then dispatches each `Start(self): ()` using `Promise.try` with contextual rejection handling. Init failures halt startup. Tests are local-only modules. Check formats, analyzes, builds, and inspects output. Serve selects Local or Staging explicitly with distinct ports.
 
 - [ ] Write the place check first: assert exactly two production entry points, no tests/world in staging, and identical production source in local/staging output; run and observe missing-bootstrap failure.
 - [ ] Add minimal entry points using the installed Loader, plus local Studio lifecycle tests using temporary fixtures.
@@ -65,4 +65,3 @@ Implement inline because the toolchain, sourcemap, and bootstrap share interface
 - [ ] Build the document index and concise setup, architecture, conventions, workflow, and lore references.
 - [ ] Run local Studio tests if available; record any UI toggle/restart limitations.
 - [ ] Request fresh spec-compliance and quality review; resolve material findings, rerun checks, commit and integrate locally.
-

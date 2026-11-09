@@ -8,9 +8,10 @@
     "**/.tools/**",
     "**/.worktrees/**"
   ],
-  "luau-lsp.sourcemap.rojoPath": "${env:USERPROFILE}/.aftman/bin/rojo.exe",
   "[luau]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua",
     "editor.formatOnSave": true
-  }
+  },
+  "luau-lsp.sourcemap.generatorCommand": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/Sourcemap.ps1",
+  "luau-lsp.sourcemap.useVSCodeWatcher": true
 }

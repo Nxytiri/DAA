@@ -6,6 +6,12 @@
 local Fs = require("@lune/fs")
 local Roblox = require("@lune/roblox")
 
+local function ReadSource(Node: Roblox.Instance): string
+	assert(Node:IsA("LuaSourceContainer"), "Expected a script source")
+	-- Lune's Instance types do not narrow class properties after IsA.
+	return (Node :: Roblox.Instance & { Source: string }).Source
+end
+
 local Staging = Roblox.deserializePlace(Fs.readFile("build/Staging.rbxlx"))
 local Local = Roblox.deserializePlace(Fs.readFile("places/Baseplate.rbxlx"))
 
@@ -20,7 +26,7 @@ for _, Node in Staging:GetDescendants() do
 		local Path = Node:GetFullName()
 		assert(not string.find(Path, "DAATests", 1, true), "Tests leaked into staging")
 		assert(not string.find(Path, "StartupProbe", 1, true), "Fixtures leaked into staging")
-		Sources[Path] = Node.Source
+		Sources[Path] = ReadSource(Node)
 		if Node:IsA("Script") or Node:IsA("LocalScript") then
 			EntryPoints += 1
 		end
@@ -32,7 +38,7 @@ local Compared = 0
 for _, Node in Local:GetDescendants() do
 	local Source = Sources[Node:GetFullName()]
 	if Source ~= nil then
-		assert(Node.Source == Source, "Production sources differ: " .. Node:GetFullName())
+		assert(ReadSource(Node) == Source, "Production sources differ: " .. Node:GetFullName())
 		Compared += 1
 	end
 end
@@ -68,6 +74,8 @@ for _, Name in
 		"TableUtil",
 		"WaitFor",
 		"Timer",
+		"Silo",
+		"Option",
 	}
 do
 	assert(SharedPackages:FindFirstChild(Name) ~= nil, "Missing shared package: " .. Name)
@@ -78,6 +86,7 @@ assert(SharedPackages:FindFirstChild("ProfileStore") == nil, "ProfileStore is ex
 local Workspace = Local:FindFirstChild("Workspace")
 assert(Workspace ~= nil and Workspace:FindFirstChild("Baseplate") ~= nil, "Local baseplate missing")
 assert(Workspace:FindFirstChild("Spawn") ~= nil, "Local spawn missing")
-assert(Local:FindFirstChild("ReplicatedFirst"):FindFirstChild("DAATests") ~= nil, "Local tests missing")
+local ReplicatedFirst = Local:FindFirstChild("ReplicatedFirst")
+assert(ReplicatedFirst ~= nil and ReplicatedFirst:FindFirstChild("DAATests") ~= nil, "Local tests missing")
 assert(SharedPackages:FindFirstChild("Net") == nil, "Removed Net package is still installed")
 print("Place checks passed: two entry points, all packages, identical code, local world excluded")

@@ -4,7 +4,8 @@
 --!strict
 
 export type Startup = {
-	OnStart: (self: Startup) -> (),
+	Init: (self: Startup) -> (),
+	Start: (self: Startup) -> (),
 }
 
 return {}

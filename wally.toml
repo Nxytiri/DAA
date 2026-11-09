@@ -21,6 +21,8 @@ Tree = "sleitnick/tree@1.1.0"
 TableUtil = "sleitnick/table-util@1.2.1"
 WaitFor = "sleitnick/wait-for@1.0.0"
 Timer = "sleitnick/timer@2.0.0"
+Silo = "sleitnick/silo@0.2.0"
+Option = "sleitnick/option@1.0.5"
 
 [server-dependencies]
 ProfileStore = "lm-loleris/profilestore@1.0.3"

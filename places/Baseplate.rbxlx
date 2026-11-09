@@ -58,12 +58,26 @@ return REQUIRED_MODULE
         </Item>
         <Item class="ModuleScript" referent="9">
           <Properties>
+            <string name="Name">Option</string>
+            <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["sleitnick_option@1.0.5"]["option"])
+export type MatchTable<T> = REQUIRED_MODULE.MatchTable<T>
+export type MatchFn<T> = REQUIRED_MODULE.MatchFn<T>
+export type DefaultFn<T> = REQUIRED_MODULE.DefaultFn<T>
+export type AndThenFn<T> = REQUIRED_MODULE.AndThenFn<T>
+export type OrElseFn<T> = REQUIRED_MODULE.OrElseFn<T>
+export type Option<T> = REQUIRED_MODULE.Option<T>
+return REQUIRED_MODULE
+]]></string>
+          </Properties>
+        </Item>
+        <Item class="ModuleScript" referent="10">
+          <Properties>
             <string name="Name">Promise</string>
             <string name="Source"><![CDATA[return require(script.Parent._Index["evaera_promise@4.0.0"]["promise"])
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="10">
+        <Item class="ModuleScript" referent="11">
           <Properties>
             <string name="Name">Shake</string>
             <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["sleitnick_shake@1.1.0"]["shake"])
@@ -72,7 +86,7 @@ return REQUIRED_MODULE
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="11">
+        <Item class="ModuleScript" referent="12">
           <Properties>
             <string name="Name">Signal</string>
             <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["sleitnick_signal@2.0.3"]["signal"])
@@ -82,7 +96,18 @@ return REQUIRED_MODULE
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="12">
+        <Item class="ModuleScript" referent="13">
+          <Properties>
+            <string name="Name">Silo</string>
+            <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["sleitnick_silo@0.2.0"]["silo"])
+export type State<S> = REQUIRED_MODULE.State<S>
+export type Modifier<S> = REQUIRED_MODULE.Modifier<S>
+export type Silo<S, A> = REQUIRED_MODULE.Silo<S, A>
+return REQUIRED_MODULE
+]]></string>
+          </Properties>
+        </Item>
+        <Item class="ModuleScript" referent="14">
           <Properties>
             <string name="Name">Spring</string>
             <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["sleitnick_spring@1.0.0"]["spring"])
@@ -91,14 +116,14 @@ return REQUIRED_MODULE
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="13">
+        <Item class="ModuleScript" referent="15">
           <Properties>
             <string name="Name">TableUtil</string>
             <string name="Source"><![CDATA[return require(script.Parent._Index["sleitnick_table-util@1.2.1"]["table-util"])
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="14">
+        <Item class="ModuleScript" referent="16">
           <Properties>
             <string name="Name">Timer</string>
             <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["sleitnick_timer@2.0.0"]["timer"])
@@ -107,14 +132,14 @@ return REQUIRED_MODULE
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="15">
+        <Item class="ModuleScript" referent="17">
           <Properties>
             <string name="Name">Tree</string>
             <string name="Source"><![CDATA[return require(script.Parent._Index["sleitnick_tree@1.1.0"]["tree"])
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="16">
+        <Item class="ModuleScript" referent="18">
           <Properties>
             <string name="Name">Trove</string>
             <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["sleitnick_trove@1.8.0"]["trove"])
@@ -125,22 +150,22 @@ return REQUIRED_MODULE
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="17">
+        <Item class="ModuleScript" referent="19">
           <Properties>
             <string name="Name">WaitFor</string>
             <string name="Source"><![CDATA[return require(script.Parent._Index["sleitnick_wait-for@1.0.0"]["wait-for"])
 ]]></string>
           </Properties>
         </Item>
-        <Item class="Folder" referent="18">
+        <Item class="Folder" referent="20">
           <Properties>
             <string name="Name">_Index</string>
           </Properties>
-          <Item class="Folder" referent="19">
+          <Item class="Folder" referent="21">
             <Properties>
               <string name="Name">evaera_promise@4.0.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="20">
+            <Item class="ModuleScript" referent="22">
               <Properties>
                 <string name="Name">promise</string>
                 <string name="Source"><![CDATA[--[[
@@ -2213,7 +2238,7 @@ end
 return Promise
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="21">
+              <Item class="ModuleScript" referent="23">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[return function()
@@ -4065,11 +4090,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="22">
+          <Item class="Folder" referent="24">
             <Properties>
               <string name="Name">sleitnick_comm@1.0.1</string>
             </Properties>
-            <Item class="ModuleScript" referent="23">
+            <Item class="ModuleScript" referent="25">
               <Properties>
                 <string name="Name">Option</string>
                 <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent.Parent["sleitnick_option@1.0.5"]["option"])
@@ -4083,14 +4108,14 @@ return REQUIRED_MODULE
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="24">
+            <Item class="ModuleScript" referent="26">
               <Properties>
                 <string name="Name">Promise</string>
                 <string name="Source"><![CDATA[return require(script.Parent.Parent["evaera_promise@4.0.0"]["promise"])
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="25">
+            <Item class="ModuleScript" referent="27">
               <Properties>
                 <string name="Name">Signal</string>
                 <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent.Parent["sleitnick_signal@2.0.3"]["signal"])
@@ -4100,7 +4125,7 @@ return REQUIRED_MODULE
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="26">
+            <Item class="ModuleScript" referent="28">
               <Properties>
                 <string name="Name">comm</string>
                 <string name="Source"><![CDATA[-- Comm
@@ -4140,7 +4165,7 @@ local Comm = {
 return Comm
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="27">
+              <Item class="ModuleScript" referent="29">
                 <Properties>
                   <string name="Name">Client</string>
                   <string name="Source"><![CDATA[local Util = require(script.Parent.Util)
@@ -4280,7 +4305,7 @@ end
 return Client
 ]]></string>
                 </Properties>
-                <Item class="ModuleScript" referent="28">
+                <Item class="ModuleScript" referent="30">
                   <Properties>
                     <string name="Name">ClientComm</string>
                     <string name="Source"><![CDATA[-- ClientComm
@@ -4518,7 +4543,7 @@ return ClientComm
 ]]></string>
                   </Properties>
                 </Item>
-                <Item class="ModuleScript" referent="29">
+                <Item class="ModuleScript" referent="31">
                   <Properties>
                     <string name="Name">ClientRemoteProperty</string>
                     <string name="Source"><![CDATA[-- ClientRemoteProperty
@@ -4680,7 +4705,7 @@ return ClientRemoteProperty
 ]]></string>
                   </Properties>
                 </Item>
-                <Item class="ModuleScript" referent="30">
+                <Item class="ModuleScript" referent="32">
                   <Properties>
                     <string name="Name">ClientRemoteSignal</string>
                     <string name="Source"><![CDATA[-- ClientRemoteSignal
@@ -4796,7 +4821,7 @@ return ClientRemoteSignal
                   </Properties>
                 </Item>
               </Item>
-              <Item class="ModuleScript" referent="31">
+              <Item class="ModuleScript" referent="33">
                 <Properties>
                   <string name="Name">Server</string>
                   <string name="Source"><![CDATA[local RemoteProperty = require(script.RemoteProperty)
@@ -4941,7 +4966,7 @@ end
 return Server
 ]]></string>
                 </Properties>
-                <Item class="ModuleScript" referent="32">
+                <Item class="ModuleScript" referent="34">
                   <Properties>
                     <string name="Name">RemoteProperty</string>
                     <string name="Source"><![CDATA[-- RemoteProperty
@@ -5242,7 +5267,7 @@ return RemoteProperty
 ]]></string>
                   </Properties>
                 </Item>
-                <Item class="ModuleScript" referent="33">
+                <Item class="ModuleScript" referent="35">
                   <Properties>
                     <string name="Name">RemoteSignal</string>
                     <string name="Source"><![CDATA[-- RemoteSignal
@@ -5459,7 +5484,7 @@ return RemoteSignal
 ]]></string>
                   </Properties>
                 </Item>
-                <Item class="ModuleScript" referent="34">
+                <Item class="ModuleScript" referent="36">
                   <Properties>
                     <string name="Name">ServerComm</string>
                     <string name="Source"><![CDATA[-- ServerComm
@@ -5677,7 +5702,7 @@ return ServerComm
                   </Properties>
                 </Item>
               </Item>
-              <Item class="ModuleScript" referent="35">
+              <Item class="ModuleScript" referent="37">
                 <Properties>
                   <string name="Name">Types</string>
                   <string name="Source"><![CDATA[-- Types
@@ -5701,7 +5726,7 @@ return nil
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="36">
+              <Item class="ModuleScript" referent="38">
                 <Properties>
                   <string name="Name">Util</string>
                   <string name="Source"><![CDATA[local RunService = game:GetService("RunService")
@@ -5734,7 +5759,7 @@ return Util
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="37">
+              <Item class="ModuleScript" referent="39">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -5757,18 +5782,18 @@ return Util
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="38">
+          <Item class="Folder" referent="40">
             <Properties>
               <string name="Name">sleitnick_component@2.4.8</string>
             </Properties>
-            <Item class="ModuleScript" referent="39">
+            <Item class="ModuleScript" referent="41">
               <Properties>
                 <string name="Name">Promise</string>
                 <string name="Source"><![CDATA[return require(script.Parent.Parent["evaera_promise@4.0.0"]["promise"])
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="40">
+            <Item class="ModuleScript" referent="42">
               <Properties>
                 <string name="Name">Signal</string>
                 <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent.Parent["sleitnick_signal@2.0.3"]["signal"])
@@ -5778,14 +5803,14 @@ return REQUIRED_MODULE
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="41">
+            <Item class="ModuleScript" referent="43">
               <Properties>
                 <string name="Name">Symbol</string>
                 <string name="Source"><![CDATA[return require(script.Parent.Parent["sleitnick_symbol@2.0.1"]["symbol"])
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="42">
+            <Item class="ModuleScript" referent="44">
               <Properties>
                 <string name="Name">Trove</string>
                 <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent.Parent["sleitnick_trove@1.8.0"]["trove"])
@@ -5796,7 +5821,7 @@ return REQUIRED_MODULE
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="43">
+            <Item class="ModuleScript" referent="45">
               <Properties>
                 <string name="Name">component</string>
                 <string name="Source"><![CDATA[-- Component
@@ -6560,7 +6585,7 @@ end
 return Component
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="44">
+              <Item class="ModuleScript" referent="46">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[return function()
@@ -6874,7 +6899,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="45">
+              <Item class="ModuleScript" referent="47">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -6898,11 +6923,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="46">
+          <Item class="Folder" referent="48">
             <Properties>
               <string name="Name">sleitnick_enum-list@2.1.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="47">
+            <Item class="ModuleScript" referent="49">
               <Properties>
                 <string name="Name">enum-list</string>
                 <string name="Source"><![CDATA[-- EnumList
@@ -7008,7 +7033,7 @@ export type EnumList = typeof(EnumList.new(...))
 return EnumList
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="48">
+              <Item class="ModuleScript" referent="50">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[return function()
@@ -7097,7 +7122,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="49">
+              <Item class="ModuleScript" referent="51">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -7115,11 +7140,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="50">
+          <Item class="Folder" referent="52">
             <Properties>
               <string name="Name">sleitnick_input@3.0.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="51">
+            <Item class="ModuleScript" referent="53">
               <Properties>
                 <string name="Name">Signal</string>
                 <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent.Parent["sleitnick_signal@2.0.3"]["signal"])
@@ -7129,7 +7154,7 @@ return REQUIRED_MODULE
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="52">
+            <Item class="ModuleScript" referent="54">
               <Properties>
                 <string name="Name">Trove</string>
                 <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent.Parent["sleitnick_trove@1.8.0"]["trove"])
@@ -7140,7 +7165,7 @@ return REQUIRED_MODULE
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="53">
+            <Item class="ModuleScript" referent="55">
               <Properties>
                 <string name="Name">input</string>
                 <string name="Source"><![CDATA[-- Input
@@ -7178,7 +7203,7 @@ return {
 }
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="54">
+              <Item class="ModuleScript" referent="56">
                 <Properties>
                   <string name="Name">Gamepad</string>
                   <string name="Source"><![CDATA[-- Gamepad
@@ -7743,7 +7768,7 @@ return Gamepad
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="55">
+              <Item class="ModuleScript" referent="57">
                 <Properties>
                   <string name="Name">Keyboard</string>
                   <string name="Source"><![CDATA[-- Keyboard
@@ -7873,7 +7898,7 @@ return Keyboard
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="56">
+              <Item class="ModuleScript" referent="58">
                 <Properties>
                   <string name="Name">Mouse</string>
                   <string name="Source"><![CDATA[-- Mouse
@@ -8157,7 +8182,7 @@ return Mouse
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="57">
+              <Item class="ModuleScript" referent="59">
                 <Properties>
                   <string name="Name">PreferredInput</string>
                   <string name="Source"><![CDATA[--!strict
@@ -8254,7 +8279,7 @@ return PreferredInput
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="58">
+              <Item class="ModuleScript" referent="60">
                 <Properties>
                   <string name="Name">Touch</string>
                   <string name="Source"><![CDATA[-- Touch
@@ -8380,7 +8405,7 @@ return Touch
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="59">
+              <Item class="ModuleScript" referent="61">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -8402,11 +8427,11 @@ return Touch
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="60">
+          <Item class="Folder" referent="62">
             <Properties>
               <string name="Name">sleitnick_loader@2.0.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="61">
+            <Item class="ModuleScript" referent="63">
               <Properties>
                 <string name="Name">loader</string>
                 <string name="Source"><![CDATA[--[=[
@@ -8548,7 +8573,7 @@ end
 return Loader
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="62">
+              <Item class="ModuleScript" referent="64">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -8566,11 +8591,11 @@ return Loader
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="63">
+          <Item class="Folder" referent="65">
             <Properties>
               <string name="Name">sleitnick_log@0.1.2</string>
             </Properties>
-            <Item class="ModuleScript" referent="64">
+            <Item class="ModuleScript" referent="66">
               <Properties>
                 <string name="Name">log</string>
                 <string name="Source"><![CDATA[-- Log
@@ -9321,7 +9346,7 @@ end
 return Log
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="65">
+              <Item class="ModuleScript" referent="67">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -9339,11 +9364,11 @@ return Log
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="66">
+          <Item class="Folder" referent="68">
             <Properties>
               <string name="Name">sleitnick_option@1.0.5</string>
             </Properties>
-            <Item class="ModuleScript" referent="67">
+            <Item class="ModuleScript" referent="69">
               <Properties>
                 <string name="Name">option</string>
                 <string name="Source"><![CDATA[-- Option
@@ -9837,7 +9862,7 @@ return (Option :: any) :: {
 }
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="68">
+              <Item class="ModuleScript" referent="70">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[return function()
@@ -10173,7 +10198,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="69">
+              <Item class="ModuleScript" referent="71">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -10191,11 +10216,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="70">
+          <Item class="Folder" referent="72">
             <Properties>
               <string name="Name">sleitnick_shake@1.1.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="71">
+            <Item class="ModuleScript" referent="73">
               <Properties>
                 <string name="Name">shake</string>
                 <string name="Source"><![CDATA[--!native
@@ -10707,7 +10732,7 @@ return {
 }
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="72">
+              <Item class="ModuleScript" referent="74">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[local RunService = game:GetService("RunService")
@@ -10972,7 +10997,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="73">
+              <Item class="ModuleScript" referent="75">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -10991,11 +11016,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="74">
+          <Item class="Folder" referent="76">
             <Properties>
               <string name="Name">sleitnick_signal@2.0.3</string>
             </Properties>
-            <Item class="ModuleScript" referent="75">
+            <Item class="ModuleScript" referent="77">
               <Properties>
                 <string name="Name">signal</string>
                 <string name="Source"><![CDATA[-- -----------------------------------------------------------------------------
@@ -11432,7 +11457,7 @@ return table.freeze({
 })
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="76">
+              <Item class="ModuleScript" referent="78">
                 <Properties>
                   <string name="Name">init.test</string>
                   <string name="Source"><![CDATA[local ServerScriptService = game:GetService("ServerScriptService")
@@ -11628,7 +11653,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="77">
+              <Item class="ModuleScript" referent="79">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -11647,11 +11672,723 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="78">
+          <Item class="Folder" referent="80">
+            <Properties>
+              <string name="Name">sleitnick_silo@0.2.0</string>
+            </Properties>
+            <Item class="ModuleScript" referent="81">
+              <Properties>
+                <string name="Name">silo</string>
+                <string name="Source"><![CDATA[-- Silo
+-- Stephen Leitnick
+-- April 29, 2022
+
+--[=[
+	@within Silo
+	@type State<S> {[string]: any}
+	Represents state.
+]=]
+export type State<S> = S & { [string]: any }
+
+--[=[
+	@within Silo
+	@type Modifier<S> (State<S>, any) -> ()
+	A function that modifies state.
+]=]
+export type Modifier<S> = (State<S>, any) -> ()
+
+--[=[
+	@within Silo
+	@interface Action<A>
+	.Name string
+	.Payload A
+	Actions are passed to `Dispatch`. However, typically actions are
+	never constructed by hand. Use a silo's Actions table to generate
+	these actions.
+]=]
+type Action<A> = {
+	Name: string,
+	Payload: A,
+}
+
+export type Silo<S, A> = {
+	Actions: { [string]: <A>(value: A) -> () },
+
+	GetState: (self: Silo<S, A>) -> State<S>,
+	Dispatch: (self: Silo<S, A>, action: Action<A>) -> (),
+	ResetToDefaultState: (self: Silo<S, A>) -> (),
+	Subscribe: (self: Silo<S, A>, subscriber: (newState: State<S>, oldState: State<S>) -> ()) -> () -> (),
+	Watch: <T>(self: Silo<S, A>, selector: (State<S>) -> T, onChange: (T) -> ()) -> () -> (),
+}
+
+local TableWatcher = require(script.TableWatcher)
+local Util = require(script.Util)
+
+--[=[
+	@class Silo
+	A Silo is a state container, inspired by Redux slices and
+	designed for Roblox developers.
+]=]
+local Silo = {}
+Silo.__index = Silo
+
+--[=[
+	@return Silo
+	Create a Silo.
+
+	```lua
+	local statsSilo = Silo.new({
+		-- Initial state:
+		Kills = 0,
+		Deaths = 0,
+		Points = 0,
+	}, {
+		-- Modifiers are functions that modify the state:
+		SetKills = function(state, kills)
+			state.Kills = kills
+		end,
+		AddPoints = function(state, points)
+			state.Points += points
+		end,
+	})
+
+	-- Use Actions to modify the state:
+	statsSilo:Dispatch(statsSilo.Actions.SetKills(10))
+
+	-- Use GetState to get the current state:
+	print("Kills", statsSilo:GetState().Kills)
+	```
+
+	From the above example, note how the modifier functions were transformed
+	into functions that can be called from `Actions` with just the single
+	payload (no need to pass state). The `SetKills` modifier is then used
+	as the `SetKills` action to be dispatched.
+]=]
+function Silo.new<S, A>(defaultState: State<S>, modifiers: { [string]: Modifier<S> }?): Silo<S, A>
+	local self = setmetatable({}, Silo)
+
+	self._DefaultState = Util.DeepFreeze(Util.DeepCopy(defaultState))
+	self._State = Util.DeepFreeze(Util.DeepCopy(defaultState))
+	self._Modifiers = {} :: { [string]: any }
+	self._Dispatching = false
+	self._Parent = self
+	self._Subscribers = {}
+
+	self.Actions = {}
+
+	-- Create modifiers and action creators:
+	if modifiers then
+		for actionName, modifier in modifiers do
+			self._Modifiers[actionName] = function(state: State<S>, payload: any)
+				-- Create a watcher to virtually watch for state mutations:
+				local watcher = TableWatcher(state)
+				modifier(watcher :: any, payload)
+				-- Apply state mutations into new state table:
+				return watcher()
+			end
+
+			self.Actions[actionName] = function(payload)
+				return {
+					Name = actionName,
+					Payload = payload,
+				}
+			end
+		end
+	end
+
+	return self
+end
+
+--[=[
+	@param silos {Silo}
+	@return Silo
+	Constructs a new silo as a combination of other silos.
+]=]
+function Silo.combine<S, A>(silos: { [string]: Silo<unknown, unknown> }, initialState: State<S>?): Silo<S, A>
+	-- Combine state:
+	local state = {}
+	for name, silo in silos do
+		if silo._Dispatching then
+			error("cannot combine silos from a modifier", 2)
+		end
+		state[name] = silo:GetState()
+	end
+
+	local combinedSilo = Silo.new(Util.Extend(state, initialState or {}))
+
+	-- Combine modifiers and actions:
+	for name, silo in silos do
+		silo._Parent = combinedSilo
+		for actionName, modifier in silo._Modifiers do
+			-- Prefix action name to keep it unique:
+			local fullActionName = `{name}/{actionName}`
+			combinedSilo._Modifiers[fullActionName] = function(s, payload)
+				-- Extend the top-level state from the sub-silo state modification:
+				return Util.Extend(s, {
+					[name] = modifier((s :: { [string]: any })[name], payload),
+				})
+			end
+		end
+		for actionName in silo.Actions do
+			if combinedSilo.Actions[actionName] ~= nil then
+				error(`duplicate action name {actionName} found when combining silos`, 2)
+			end
+			-- Update the action creator to include the correct prefixed action name:
+			local fullActionName = `{name}/{actionName}`
+			silo.Actions[actionName] = function(p)
+				return {
+					Name = fullActionName,
+					Payload = p,
+				}
+			end
+			combinedSilo.Actions[actionName] = silo.Actions[actionName]
+		end
+	end
+
+	return combinedSilo
+end
+
+--[=[
+	Get the current state.
+
+	```lua
+	local state = silo:GetState()
+	```
+]=]
+function Silo:GetState<S>(): State<S>
+	if self._Parent ~= self then
+		error("can only get state from top-level silo", 2)
+	end
+	return self._State
+end
+
+--[=[
+	Dispatch an action.
+
+	```lua
+	silo:Dispatch(silo.Actions.DoSomething("something"))
+	```
+]=]
+function Silo:Dispatch<A>(action: Action<A>)
+	if self._Dispatching then
+		error("cannot dispatch from a modifier", 2)
+	end
+	if self._Parent ~= self then
+		error("can only dispatch from top-level silo", 2)
+	end
+
+	-- Find and invoke the modifier to modify current state:
+	self._Dispatching = true
+	local oldState = self._State
+	local newState = oldState
+	local modifier = self._Modifiers[action.Name]
+	if modifier then
+		newState = modifier(newState, action.Payload)
+	end
+	self._Dispatching = false
+
+	-- State changed:
+	if newState ~= oldState then
+		self._State = Util.DeepFreeze(newState)
+
+		-- Notify subscribers of state change:
+		for _, subscriber in self._Subscribers do
+			subscriber(newState, oldState)
+		end
+	end
+end
+
+--[=[
+	Subscribe a function to receive all state updates, including
+	initial state (subscriber is called immediately).
+
+	Returns an unsubscribe function. Call the function to unsubscribe.
+
+	```lua
+	local unsubscribe = silo:Subscribe(function(newState, oldState)
+		-- Do something
+	end)
+
+	-- Later on, if desired, disconnect the subscription by calling unsubscribe:
+	unsubscribe()
+	```
+]=]
+function Silo:Subscribe<S>(subscriber: (newState: State<S>, oldState: State<S>) -> ()): () -> ()
+	if self._Dispatching then
+		error("cannot subscribe from within a modifier", 2)
+	end
+	if self._Parent ~= self then
+		error("can only subscribe on top-level silo", 2)
+	end
+	if table.find(self._Subscribers, subscriber) then
+		error("cannot subscribe same function more than once", 2)
+	end
+
+	table.insert(self._Subscribers, subscriber)
+
+	-- Unsubscribe:
+	return function()
+		local index = table.find(self._Subscribers, subscriber)
+		if not index then
+			return
+		end
+		table.remove(self._Subscribers, index)
+	end
+end
+
+--[=[
+	Watch a specific value within the state, which is selected by the
+	`selector` function. The initial value, and any subsequent changes
+	grabbed by the selector, will be passed to the `onChange` function.
+
+	Just like `Subscribe`, a function is returned that can be used
+	to unsubscribe (i.e. stop watching).
+
+	```lua
+	local function SelectPoints(state)
+		return state.Statistics.Points
+	end
+
+	local unsubscribe = silo:Watch(SelectPoints, function(points)
+		print("Points", points)
+	end)
+	```
+]=]
+function Silo:Watch<S, T>(selector: (State<S>) -> T, onChange: (T) -> ()): () -> ()
+	local value = selector(self:GetState())
+
+	local unsubscribe = self:Subscribe(function(state)
+		local newValue = selector(state)
+		if newValue == value then
+			return
+		end
+		value = newValue
+		onChange(value)
+	end)
+
+	-- Call initial onChange after subscription to verify subscription didn't fail:
+	onChange(value)
+
+	return unsubscribe
+end
+
+--[=[
+	Reset the state to the default state that was given in the constructor.
+
+	```lua
+	local silo = Silo.new({
+		Points = 0,
+	}, {
+		SetPoints = function(state, points)
+			state.Points = points
+		end
+	})
+
+	silo:Dispatch(silo.Actions.SetPoints(10))
+
+	print(silo:GetState().Points) -- 10
+
+	silo:ResetToDefaultState()
+
+	print(silo:GetState().Points) -- 0
+	```
+]=]
+function Silo:ResetToDefaultState()
+	if self._Dispatching then
+		error("cannot reset state from within a modifier", 2)
+	end
+
+	if self._Parent ~= self then
+		error("can only reset state on top-level silo", 2)
+	end
+
+	local oldState = self._State
+
+	if self._DefaultState ~= oldState then
+		self._State = Util.DeepFreeze(Util.DeepCopy(self._DefaultState))
+
+		for _, subscriber in self._Subscribers do
+			subscriber(self._State, oldState)
+		end
+	end
+end
+
+return {
+	new = Silo.new,
+	combine = Silo.combine,
+}
+]]></string>
+              </Properties>
+              <Item class="ModuleScript" referent="82">
+                <Properties>
+                  <string name="Name">TableWatcher</string>
+                  <string name="Source"><![CDATA[--!strict
+
+-- TableWatcher
+-- Stephen Leitnick
+-- April 29, 2022
+
+type AnyTable = { [any]: any }
+
+type Watcher = {
+	Changes: AnyTable,
+	Tbl: AnyTable,
+}
+
+local Util = require(script.Parent.Util)
+
+local watchers: { [TableWatcher]: Watcher } = {}
+setmetatable(watchers, { __mode = "k" })
+
+local WatcherMt = {}
+
+function WatcherMt:__index(index)
+	local w = watchers[self]
+	local c = w.Changes[index]
+	if c ~= nil then
+		if c == Util.None then
+			return nil
+		else
+			return c
+		end
+	end
+	return w.Tbl[index]
+end
+
+function WatcherMt:__newindex(index, value)
+	local w = watchers[self]
+	if w.Tbl[index] == value then
+		return
+	end
+	if value == nil then
+		w.Changes[index] = Util.None
+	else
+		w.Changes[index] = value
+	end
+end
+
+function WatcherMt:__call()
+	local w = watchers[self]
+	if next(w.Changes) == nil then
+		return w.Tbl
+	end
+	return Util.Extend(w.Tbl, w.Changes)
+end
+
+local function TableWatcher(t: AnyTable): TableWatcher
+	local watcher = setmetatable({}, WatcherMt)
+	watchers[watcher] = {
+		Changes = {},
+		Tbl = t,
+	}
+	return watcher
+end
+
+type TableWatcher = typeof(setmetatable({}, WatcherMt))
+
+return TableWatcher
+]]></string>
+                </Properties>
+              </Item>
+              <Item class="ModuleScript" referent="83">
+                <Properties>
+                  <string name="Name">Util</string>
+                  <string name="Source"><![CDATA[--!strict
+
+-- Util
+-- Stephen Leitnick
+-- April 29, 2022
+
+type AnyTable = { [any]: any }
+
+local Util = {}
+
+Util.None = newproxy()
+
+-- Recursive table freeze.
+function Util.DeepFreeze<T>(tbl: AnyTable): AnyTable
+	table.freeze(tbl)
+	for _, v in tbl do
+		if type(v) == "table" then
+			Util.DeepFreeze(v)
+		end
+	end
+	return tbl
+end
+
+-- Recursive table copy.
+function Util.DeepCopy<T>(tbl: AnyTable): AnyTable
+	local newTbl = table.clone(tbl)
+	for k, v in newTbl do
+		if type(v) == "table" then
+			newTbl[k] = Util.DeepCopy(v)
+		end
+	end
+	return newTbl
+end
+
+-- Extends one table with another.
+-- Similar to the spread operator in JavaScript.
+function Util.Extend(original: AnyTable, extension: AnyTable): AnyTable
+	local t = Util.DeepCopy(original)
+	for k, v in extension do
+		if type(v) == "table" then
+			if type(original[k]) == "table" then
+				t[k] = Util.Extend(original[k], v)
+			else
+				t[k] = Util.DeepCopy(v)
+			end
+		elseif v == Util.None then
+			t[k] = nil
+		else
+			t[k] = v
+		end
+	end
+	return t
+end
+
+return Util
+]]></string>
+                </Properties>
+              </Item>
+              <Item class="ModuleScript" referent="84">
+                <Properties>
+                  <string name="Name">init.spec</string>
+                  <string name="Source"><![CDATA[return function()
+	local Silo = require(script.Parent)
+
+	local silo1, silo2, rootSilo
+
+	beforeEach(function()
+		silo1 = Silo.new({
+			Kills = 0,
+			Deaths = 0,
+		}, {
+			SetKills = function(state, kills)
+				state.Kills = kills
+			end,
+			IncrementDeaths = function(state, deaths)
+				state.Deaths += deaths
+			end,
+		})
+		silo2 = Silo.new({
+			Money = 0,
+		}, {
+			AddMoney = function(state, money)
+				state.Money += money
+			end,
+		})
+		rootSilo = Silo.combine({
+			Stats = silo1,
+			Econ = silo2,
+		})
+	end)
+
+	describe("State", function()
+		it("should get state properly", function()
+			local silo = Silo.new({
+				ABC = 10,
+			})
+			local state = silo:GetState()
+			expect(state).to.be.a("table")
+			expect(state.ABC).to.equal(10)
+		end)
+
+		it("should get state from combined silos", function()
+			local state = rootSilo:GetState()
+			expect(state).to.be.a("table")
+			expect(state.Stats).to.be.a("table")
+			expect(state.Econ).to.be.a("table")
+			expect(state.Stats.Kills).to.be.a("number")
+			expect(state.Stats.Deaths).to.be.a("number")
+			expect(state.Econ.Money).to.be.a("number")
+		end)
+
+		it("should not allow getting state from sub-silo", function()
+			expect(function()
+				silo1:GetState()
+			end).to.throw()
+			expect(function()
+				silo2:GetState()
+			end).to.throw()
+		end)
+
+		it("should throw error if attempting to modify state directly", function()
+			expect(function()
+				rootSilo:GetState().Stats.Kills = 10
+			end).to.throw()
+			expect(function()
+				rootSilo:GetState().Stats.SomethingNew = 100
+			end).to.throw()
+			expect(function()
+				rootSilo:GetState().Stats = {}
+			end).to.throw()
+			expect(function()
+				rootSilo:GetState().SomethingElse = {}
+			end).to.throw()
+		end)
+	end)
+
+	describe("Dispatch", function()
+		it("should dispatch", function()
+			expect(rootSilo:GetState().Stats.Kills).to.equal(0)
+			rootSilo:Dispatch(silo1.Actions.SetKills(10))
+			expect(rootSilo:GetState().Stats.Kills).to.equal(10)
+			rootSilo:Dispatch(silo2.Actions.AddMoney(10))
+			rootSilo:Dispatch(silo2.Actions.AddMoney(20))
+			expect(rootSilo:GetState().Econ.Money).to.equal(30)
+		end)
+
+		it("should not allow dispatching from a sub-silo", function()
+			expect(function()
+				silo1:Dispatch(silo1.Action.SetKills(0))
+			end).to.throw()
+			expect(function()
+				silo2:Dispatch(silo2.Action.AddMoney(0))
+			end).to.throw()
+		end)
+
+		it("should not allow dispatching from within a modifier", function()
+			expect(function()
+				local silo
+				silo = Silo.new({
+					Data = 0,
+				}, {
+					SetData = function(state, newData)
+						state.Data = newData
+						silo:Dispatch({ Name = "", Payload = 0 })
+					end,
+				})
+				silo:Dispatch(silo.Actions.SetData(0))
+			end).to.throw()
+		end)
+	end)
+
+	describe("Subscribe", function()
+		it("should subscribe to a silo", function()
+			local new, old
+			local n = 0
+			local unsubscribe = rootSilo:Subscribe(function(newState, oldState)
+				n += 1
+				new, old = newState, oldState
+			end)
+			expect(n).to.equal(0)
+			rootSilo:Dispatch(silo1.Actions.SetKills(10))
+			expect(n).to.equal(1)
+			expect(new).to.be.a("table")
+			expect(old).to.be.a("table")
+			expect(new.Stats.Kills).to.equal(10)
+			expect(old.Stats.Kills).to.equal(0)
+			rootSilo:Dispatch(silo1.Actions.SetKills(20))
+			expect(n).to.equal(2)
+			expect(new.Stats.Kills).to.equal(20)
+			expect(old.Stats.Kills).to.equal(10)
+			unsubscribe()
+			rootSilo:Dispatch(silo1.Actions.SetKills(30))
+			expect(n).to.equal(2)
+		end)
+
+		it("should not allow subscribing same function more than once", function()
+			local function sub() end
+			expect(function()
+				rootSilo:Subscribe(sub)
+			end).never.to.throw()
+			expect(function()
+				rootSilo:Subscribe(sub)
+			end).to.throw()
+		end)
+
+		it("should not allow subscribing to a sub-silo", function()
+			expect(function()
+				silo1:Subscribe(function() end)
+			end).to.throw()
+		end)
+
+		it("should not allow subscribing from within a modifier", function()
+			expect(function()
+				local silo
+				silo = Silo.new({
+					Data = 0,
+				}, {
+					SetData = function(state, newData)
+						state.Data = newData
+						silo:Subscribe(function() end)
+					end,
+				})
+				silo:Dispatch(silo.Actions.SetData(0))
+			end).to.throw()
+		end)
+	end)
+
+	describe("Watch", function()
+		it("should watch value changes", function()
+			local function SelectMoney(state)
+				return state.Econ.Money
+			end
+			local changes = 0
+			local currentMoney = 0
+			local unsubscribeWatch = rootSilo:Watch(SelectMoney, function(money)
+				changes += 1
+				currentMoney = money
+			end)
+			expect(changes).to.equal(1)
+			rootSilo:Dispatch(silo2.Actions.AddMoney(10))
+			expect(changes).to.equal(2)
+			expect(currentMoney).to.equal(10)
+			rootSilo:Dispatch(silo2.Actions.AddMoney(20))
+			expect(changes).to.equal(3)
+			expect(currentMoney).to.equal(30)
+			rootSilo:Dispatch(silo2.Actions.AddMoney(0))
+			expect(changes).to.equal(3)
+			expect(currentMoney).to.equal(30)
+			rootSilo:Dispatch(silo1.Actions.SetKills(10))
+			expect(changes).to.equal(3)
+			expect(currentMoney).to.equal(30)
+			unsubscribeWatch()
+			rootSilo:Dispatch(silo2.Actions.AddMoney(10))
+			expect(changes).to.equal(3)
+			expect(currentMoney).to.equal(30)
+		end)
+	end)
+
+	describe("ResetToDefaultState", function()
+		it("should reset the silo to it's default state", function()
+			rootSilo:Dispatch(silo1.Actions.SetKills(10))
+			rootSilo:Dispatch(silo2.Actions.AddMoney(30))
+			expect(rootSilo:GetState().Stats.Kills).to.equal(10)
+			expect(rootSilo:GetState().Econ.Money).to.equal(30)
+			rootSilo:ResetToDefaultState()
+			expect(rootSilo:GetState().Stats.Kills).to.equal(0)
+			expect(rootSilo:GetState().Econ.Money).to.equal(0)
+		end)
+	end)
+end
+]]></string>
+                </Properties>
+              </Item>
+              <Item class="ModuleScript" referent="85">
+                <Properties>
+                  <string name="Name">wally</string>
+                  <string name="Source">return {
+	package = {
+		authors = {"Stephen Leitnick"},
+		description = "State container class",
+		license = "MIT",
+		name = "sleitnick/silo",
+		realm = "shared",
+		registry = "https://github.com/UpliftGames/wally-index",
+		version = "0.2.0",
+	},
+}</string>
+                </Properties>
+              </Item>
+            </Item>
+          </Item>
+          <Item class="Folder" referent="86">
             <Properties>
               <string name="Name">sleitnick_spring@1.0.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="79">
+            <Item class="ModuleScript" referent="87">
               <Properties>
                 <string name="Name">spring</string>
                 <string name="Source"><![CDATA[--!strict
@@ -11753,7 +12490,7 @@ end
 return Spring
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="80">
+              <Item class="ModuleScript" referent="88">
                 <Properties>
                   <string name="Name">package</string>
                   <string name="Source">return {
@@ -11770,7 +12507,7 @@ return Spring
 }</string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="81">
+              <Item class="ModuleScript" referent="89">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -11788,11 +12525,11 @@ return Spring
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="82">
+          <Item class="Folder" referent="90">
             <Properties>
               <string name="Name">sleitnick_symbol@2.0.1</string>
             </Properties>
-            <Item class="ModuleScript" referent="83">
+            <Item class="ModuleScript" referent="91">
               <Properties>
                 <string name="Name">symbol</string>
                 <string name="Source"><![CDATA[-- Symbol
@@ -11853,7 +12590,7 @@ end
 return Symbol
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="84">
+              <Item class="ModuleScript" referent="92">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[return function()
@@ -11892,7 +12629,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="85">
+              <Item class="ModuleScript" referent="93">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -11910,11 +12647,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="86">
+          <Item class="Folder" referent="94">
             <Properties>
               <string name="Name">sleitnick_table-util@1.2.1</string>
             </Properties>
-            <Item class="ModuleScript" referent="87">
+            <Item class="ModuleScript" referent="95">
               <Properties>
                 <string name="Name">table-util</string>
                 <string name="Source"><![CDATA[--!strict
@@ -12843,7 +13580,7 @@ TableUtil.DecodeJSON = DecodeJSON
 return TableUtil
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="88">
+              <Item class="ModuleScript" referent="96">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[return function()
@@ -13276,7 +14013,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="89">
+              <Item class="ModuleScript" referent="97">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -13294,11 +14031,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="90">
+          <Item class="Folder" referent="98">
             <Properties>
               <string name="Name">sleitnick_timer@2.0.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="91">
+            <Item class="ModuleScript" referent="99">
               <Properties>
                 <string name="Name">Signal</string>
                 <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent.Parent["sleitnick_signal@2.0.3"]["signal"])
@@ -13308,7 +14045,7 @@ return REQUIRED_MODULE
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="92">
+            <Item class="ModuleScript" referent="100">
               <Properties>
                 <string name="Name">timer</string>
                 <string name="Source"><![CDATA[--!strict
@@ -13562,7 +14299,7 @@ end
 return Timer
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="93">
+              <Item class="ModuleScript" referent="101">
                 <Properties>
                   <string name="Name">init.test</string>
                   <string name="Source"><![CDATA[local ServerScriptService = game:GetService("ServerScriptService")
@@ -13641,7 +14378,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="94">
+              <Item class="ModuleScript" referent="102">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -13662,11 +14399,11 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="95">
+          <Item class="Folder" referent="103">
             <Properties>
               <string name="Name">sleitnick_tree@1.1.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="96">
+            <Item class="ModuleScript" referent="104">
               <Properties>
                 <string name="Name">tree</string>
                 <string name="Source"><![CDATA[local DELIM = "/"
@@ -13808,7 +14545,7 @@ end
 return Tree
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="97">
+              <Item class="ModuleScript" referent="105">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -13826,11 +14563,11 @@ return Tree
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="98">
+          <Item class="Folder" referent="106">
             <Properties>
               <string name="Name">sleitnick_trove@1.8.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="99">
+            <Item class="ModuleScript" referent="107">
               <Properties>
                 <string name="Name">trove</string>
                 <string name="Source"><![CDATA[--!strict
@@ -14622,7 +15359,7 @@ return {
 }
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="100">
+              <Item class="ModuleScript" referent="108">
                 <Properties>
                   <string name="Name">init.test</string>
                   <string name="Source"><![CDATA[local ServerScriptService = game:GetService("ServerScriptService")
@@ -14831,7 +15568,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="101">
+              <Item class="ModuleScript" referent="109">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -14849,18 +15586,18 @@ end
               </Item>
             </Item>
           </Item>
-          <Item class="Folder" referent="102">
+          <Item class="Folder" referent="110">
             <Properties>
               <string name="Name">sleitnick_wait-for@1.0.0</string>
             </Properties>
-            <Item class="ModuleScript" referent="103">
+            <Item class="ModuleScript" referent="111">
               <Properties>
                 <string name="Name">Promise</string>
                 <string name="Source"><![CDATA[return require(script.Parent.Parent["evaera_promise@4.0.0"]["promise"])
 ]]></string>
               </Properties>
             </Item>
-            <Item class="ModuleScript" referent="104">
+            <Item class="ModuleScript" referent="112">
               <Properties>
                 <string name="Name">wait-for</string>
                 <string name="Source"><![CDATA[-- WaitFor
@@ -15122,7 +15859,7 @@ end
 return WaitFor
 ]]></string>
               </Properties>
-              <Item class="ModuleScript" referent="105">
+              <Item class="ModuleScript" referent="113">
                 <Properties>
                   <string name="Name">init.spec</string>
                   <string name="Source"><![CDATA[return function()
@@ -15306,7 +16043,7 @@ end
 ]]></string>
                 </Properties>
               </Item>
-              <Item class="ModuleScript" referent="106">
+              <Item class="ModuleScript" referent="114">
                 <Properties>
                   <string name="Name">wally</string>
                   <string name="Source">return {
@@ -15329,11 +16066,11 @@ end
           </Item>
         </Item>
       </Item>
-      <Item class="Folder" referent="107">
+      <Item class="Folder" referent="115">
         <Properties>
           <string name="Name">Shared</string>
         </Properties>
-        <Item class="ModuleScript" referent="108">
+        <Item class="ModuleScript" referent="116">
           <Properties>
             <string name="Name">Types</string>
             <string name="Source"><![CDATA[--//LuauProgrammer
@@ -15342,7 +16079,8 @@ end
 --!strict
 
 export type Startup = {
-	OnStart: (self: Startup) -> (),
+	Init: (self: Startup) -> (),
+	Start: (self: Startup) -> (),
 }
 
 return {}
@@ -15352,15 +16090,15 @@ return {}
       </Item>
     </Item>
   </Item>
-  <Item class="ServerScriptService" referent="109">
+  <Item class="ServerScriptService" referent="117">
     <Properties>
       <string name="Name">ServerScriptService</string>
     </Properties>
-    <Item class="Folder" referent="110">
+    <Item class="Folder" referent="118">
       <Properties>
         <string name="Name">DAA</string>
       </Properties>
-      <Item class="Script" referent="111">
+      <Item class="Script" referent="119">
         <Properties>
           <string name="Name">Bootstrap</string>
           <token name="RunContext">0</token>
@@ -15372,23 +16110,32 @@ return {}
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Loader = require(ReplicatedStorage.DAA.Packages.Loader)
+local Promise = require(ReplicatedStorage.DAA.Packages.Promise)
 local Types = require(ReplicatedStorage.DAA.Shared.Types)
 
 local Services: { [string]: Types.Startup } = Loader.LoadChildren(script.Parent.Services)
-Loader.SpawnAll(Services, "OnStart")
+for _, Service in Services do
+	Service:Init()
+end
+
+for Name, Service in Services do
+	Promise.try(Service.Start, Service):catch(function(Message: unknown)
+		warn(("[DAA/%s] Start failed: %s"):format(Name, tostring(Message)))
+	end)
+end
 ]]></string>
         </Properties>
       </Item>
-      <Item class="Folder" referent="112">
+      <Item class="Folder" referent="120">
         <Properties>
           <string name="Name">Services</string>
         </Properties>
       </Item>
-      <Item class="Folder" referent="113">
+      <Item class="Folder" referent="121">
         <Properties>
           <string name="Name">Packages</string>
         </Properties>
-        <Item class="ModuleScript" referent="114">
+        <Item class="ModuleScript" referent="122">
           <Properties>
             <string name="Name">ProfileStore</string>
             <string name="Source"><![CDATA[local REQUIRED_MODULE = require(script.Parent._Index["lm-loleris_profilestore@1.0.3"]["profilestore"])
@@ -15401,15 +16148,15 @@ return REQUIRED_MODULE
 ]]></string>
           </Properties>
         </Item>
-        <Item class="Folder" referent="115">
+        <Item class="Folder" referent="123">
           <Properties>
             <string name="Name">_Index</string>
           </Properties>
-          <Item class="Folder" referent="116">
+          <Item class="Folder" referent="124">
             <Properties>
               <string name="Name">lm-loleris_profilestore@1.0.3</string>
             </Properties>
-            <Item class="ModuleScript" referent="117">
+            <Item class="ModuleScript" referent="125">
               <Properties>
                 <string name="Name">profilestore</string>
                 <string name="Source">--[[
@@ -17662,19 +18409,19 @@ return ProfileStore</string>
       </Item>
     </Item>
   </Item>
-  <Item class="StarterPlayer" referent="118">
+  <Item class="StarterPlayer" referent="126">
     <Properties>
       <string name="Name">StarterPlayer</string>
     </Properties>
-    <Item class="StarterPlayerScripts" referent="119">
+    <Item class="StarterPlayerScripts" referent="127">
       <Properties>
         <string name="Name">StarterPlayerScripts</string>
       </Properties>
-      <Item class="Folder" referent="120">
+      <Item class="Folder" referent="128">
         <Properties>
           <string name="Name">DAA</string>
         </Properties>
-        <Item class="LocalScript" referent="121">
+        <Item class="LocalScript" referent="129">
           <Properties>
             <string name="Name">Bootstrap</string>
             <string name="Source"><![CDATA[--//LuauProgrammer
@@ -17686,15 +18433,24 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local DAA = ReplicatedStorage:WaitForChild("DAA")
 local Loader = require(DAA:WaitForChild("Packages"):WaitForChild("Loader"))
+local Promise = require(DAA.Packages:WaitForChild("Promise"))
 local Types = require(DAA:WaitForChild("Shared"):WaitForChild("Types"))
 
 local Controllers: { [string]: Types.Startup } =
 	Loader.LoadChildren(script.Parent:WaitForChild("Controllers"))
-Loader.SpawnAll(Controllers, "OnStart")
+for _, Controller in Controllers do
+	Controller:Init()
+end
+
+for Name, Controller in Controllers do
+	Promise.try(Controller.Start, Controller):catch(function(Message: unknown)
+		warn(("[DAA/%s] Start failed: %s"):format(Name, tostring(Message)))
+	end)
+end
 ]]></string>
           </Properties>
         </Item>
-        <Item class="Folder" referent="122">
+        <Item class="Folder" referent="130">
           <Properties>
             <string name="Name">Controllers</string>
           </Properties>
@@ -17702,15 +18458,15 @@ Loader.SpawnAll(Controllers, "OnStart")
       </Item>
     </Item>
   </Item>
-  <Item class="ReplicatedFirst" referent="123">
+  <Item class="ReplicatedFirst" referent="131">
     <Properties>
       <string name="Name">ReplicatedFirst</string>
     </Properties>
-    <Item class="Folder" referent="124">
+    <Item class="Folder" referent="132">
       <Properties>
         <string name="Name">DAATests</string>
       </Properties>
-      <Item class="ModuleScript" referent="125">
+      <Item class="ModuleScript" referent="133">
         <Properties>
           <string name="Name">Bootstrap.spec</string>
           <string name="Source"><![CDATA[--//LuauProgrammer
@@ -17722,7 +18478,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local ServerScriptService = game:GetService("ServerScriptService")
 
-return function(): ()
+return function(Case: string?): ()
 	local IsServer = RunService:IsServer()
 	local Parent: Instance = if IsServer
 		then ServerScriptService
@@ -17735,6 +18491,13 @@ return function(): ()
 	TestRoot.Name = "DAABootstrapCheck"
 	local Fixtures = script.Parent.Fixtures:Clone()
 	Fixtures.Name = if IsServer then "Services" else "Controllers"
+	local SecondProbe = Fixtures.StartupProbe:Clone()
+	SecondProbe.Name = "SecondProbe"
+	SecondProbe.Parent = Fixtures
+	if Case ~= nil then
+		local Failure = script.Parent.Failures[Case]:Clone()
+		Failure.Parent = Fixtures
+	end
 	Fixtures.Parent = TestRoot
 	local Bootstrap = Template:Clone()
 	Bootstrap.Enabled = false
@@ -17742,17 +18505,39 @@ return function(): ()
 	TestRoot.Parent = Parent
 	Bootstrap.Enabled = true
 
-	local Success, Message = pcall(function()
+	local Success, Message = pcall(function(): unknown
 		local Probe = Fixtures.StartupProbe
+		if Case == "InitFailure" then
+			local Deadline = os.clock() + 5
+			while Fixtures.InitFailure:GetAttribute("Failed") ~= true and os.clock() < Deadline do
+				task.wait()
+			end
+			assert(Fixtures.InitFailure:GetAttribute("Failed") == true, "Init failure was not reached")
+			task.wait(0.1)
+			assert(
+				Probe:GetAttribute("Starting") == nil and SecondProbe:GetAttribute("Starting") == nil,
+				"Start ran after an Init error"
+			)
+			assert(Fixtures.InitFailure:GetAttribute("Started") == nil, "Failed module was started")
+			return nil
+		end
 		local Deadline = os.clock() + 5
-		while Probe:GetAttribute("Started") ~= true and os.clock() < Deadline do
+		while
+			(Probe:GetAttribute("Started") ~= true or SecondProbe:GetAttribute("Started") ~= true)
+			and os.clock() < Deadline
+		do
 			task.wait()
 		end
 		assert(Probe:GetAttribute("Started") == true, "Bootstrap did not start its direct child module")
+		assert(SecondProbe:GetAttribute("Started") == true, "Second startup hook did not finish")
+		if Case == "StartFailure" then
+			assert(Fixtures.StartFailure:GetAttribute("Attempted") == true, "Start failure was not reached")
+		end
 		assert(
 			Fixtures.Helpers.DoNotStart:GetAttribute("Started") == nil,
 			"Bootstrap started a nested helper"
 		)
+		return nil
 	end)
 	TestRoot:Destroy()
 	assert(Success, tostring(Message))
@@ -17761,15 +18546,66 @@ end
 ]]></string>
         </Properties>
       </Item>
-      <Item class="Folder" referent="126">
+      <Item class="Folder" referent="134">
+        <Properties>
+          <string name="Name">Failures</string>
+        </Properties>
+        <Item class="ModuleScript" referent="135">
+          <Properties>
+            <string name="Name">InitFailure</string>
+            <string name="Source"><![CDATA[--//LuauProgrammer
+--//InitFailure
+--//2026-11-08
+--!strict
+
+script:SetAttribute("Required", true)
+local InitFailure = {}
+
+function InitFailure.Init(): ()
+	script:SetAttribute("Failed", true)
+	error("EXPECTED_INIT_FAILURE")
+end
+
+function InitFailure.Start(): ()
+	script:SetAttribute("Started", true)
+end
+
+return InitFailure
+]]></string>
+          </Properties>
+        </Item>
+        <Item class="ModuleScript" referent="136">
+          <Properties>
+            <string name="Name">StartFailure</string>
+            <string name="Source"><![CDATA[--//LuauProgrammer
+--//StartFailure
+--//2026-11-08
+--!strict
+
+script:SetAttribute("Required", true)
+local StartFailure = {}
+
+function StartFailure.Init(): () end
+
+function StartFailure.Start(): ()
+	script:SetAttribute("Attempted", true)
+	error("EXPECTED_START_FAILURE")
+end
+
+return StartFailure
+]]></string>
+          </Properties>
+        </Item>
+      </Item>
+      <Item class="Folder" referent="137">
         <Properties>
           <string name="Name">Fixtures</string>
         </Properties>
-        <Item class="Folder" referent="127">
+        <Item class="Folder" referent="138">
           <Properties>
             <string name="Name">Helpers</string>
           </Properties>
-          <Item class="ModuleScript" referent="128">
+          <Item class="ModuleScript" referent="139">
             <Properties>
               <string name="Name">DoNotStart</string>
               <string name="Source"><![CDATA[--//LuauProgrammer
@@ -17779,7 +18615,9 @@ end
 
 local DoNotStart = {}
 
-function DoNotStart.OnStart(): ()
+function DoNotStart.Init(): () end
+
+function DoNotStart.Start(): ()
 	script:SetAttribute("Started", true)
 end
 
@@ -17788,7 +18626,7 @@ return DoNotStart
             </Properties>
           </Item>
         </Item>
-        <Item class="ModuleScript" referent="129">
+        <Item class="ModuleScript" referent="140">
           <Properties>
             <string name="Name">StartupProbe</string>
             <string name="Source"><![CDATA[--//LuauProgrammer
@@ -17796,11 +18634,32 @@ return DoNotStart
 --//2026-11-08
 --!strict
 
+-- A yielding fixture exposes a loader that starts modules before require finishes.
+task.wait(0.02)
+script:SetAttribute("Required", true)
 local StartupProbe = { _started = false }
 
-function StartupProbe.OnStart(Self: typeof(StartupProbe)): ()
+function StartupProbe.Init(): ()
+	for _, Module in script.Parent:GetChildren() do
+		if Module:IsA("ModuleScript") then
+			assert(Module:GetAttribute("Required") == true, "Init ran before every require completed")
+		end
+	end
+	script:SetAttribute("Initialized", true)
+end
+
+function StartupProbe.Start(Self: typeof(StartupProbe)): ()
+	local PeerName = if script.Name == "StartupProbe" then "SecondProbe" else "StartupProbe"
+	local Peer = script.Parent:FindFirstChild(PeerName)
+	assert(Peer ~= nil and Peer:GetAttribute("Initialized") == true, "Start ran before all Init hooks")
 	assert(not Self._started, "Startup called twice")
 	Self._started = true
+	script:SetAttribute("Starting", true)
+	local Deadline = os.clock() + 2
+	while Peer:GetAttribute("Starting") ~= true and os.clock() < Deadline do
+		task.wait()
+	end
+	assert(Peer:GetAttribute("Starting") == true, "Start hooks were not dispatched asynchronously")
 	script:SetAttribute("Started", true)
 end
 
@@ -17811,13 +18670,13 @@ return StartupProbe
       </Item>
     </Item>
   </Item>
-  <Item class="Workspace" referent="130">
+  <Item class="Workspace" referent="141">
     <Properties>
       <string name="Name">Workspace</string>
       <bool name="FilteringEnabled">true</bool>
       <bool name="NeedsPivotMigration">false</bool>
     </Properties>
-    <Item class="Part" referent="131">
+    <Item class="Part" referent="142">
       <Properties>
         <string name="Name">Baseplate</string>
         <bool name="Anchored">true</bool>
@@ -17834,7 +18693,7 @@ return StartupProbe
         </Vector3>
       </Properties>
     </Item>
-    <Item class="SpawnLocation" referent="132">
+    <Item class="SpawnLocation" referent="143">
       <Properties>
         <string name="Name">Spawn</string>
         <bool name="Anchored">true</bool>

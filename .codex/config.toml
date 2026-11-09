@@ -1,0 +1,16 @@
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+
+[mcp_servers.Roblox_Studio]
+command = "cmd.exe"
+args = ["/d", "/c", 'cd /d %LOCALAPPDATA%\Roblox && .\mcp.bat']
+startup_timeout_sec = 30
+
+[mcp_servers.daa-studio]
+command = "cmd.exe"
+args = ["/d", "/c", "npx", "-y", "@chrrxs/robloxstudio-mcp@3.4.3", "--auto-install-plugin"]
+startup_timeout_sec = 60
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
