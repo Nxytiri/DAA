@@ -20,6 +20,10 @@ assert(Staging:FindFirstChild("Lighting") == nil, "Staging must not change Light
 assert(Staging:FindFirstChild("SoundService") == nil, "Staging must not change SoundService")
 
 local Sources: { [string]: string } = {}
+local Bootstraps: { [string]: string } = {
+	["ServerScriptService.DAA.Bootstrap"] = "Script",
+	["StarterPlayer.StarterPlayerScripts.DAA.Bootstrap"] = "LocalScript",
+}
 local EntryPoints = 0
 for _, Node in Staging:GetDescendants() do
 	if Node:IsA("LuaSourceContainer") then
@@ -27,12 +31,18 @@ for _, Node in Staging:GetDescendants() do
 		assert(not string.find(Path, "DAATests", 1, true), "Tests leaked into staging")
 		assert(not string.find(Path, "StartupProbe", 1, true), "Fixtures leaked into staging")
 		Sources[Path] = ReadSource(Node)
+		local ExpectedClass = Bootstraps[Path]
+		if ExpectedClass ~= nil then
+			assert(Node.ClassName == ExpectedClass, Path .. " must be a " .. ExpectedClass)
+			Bootstraps[Path] = nil
+		end
 		if Node:IsA("Script") or Node:IsA("LocalScript") then
 			EntryPoints += 1
 		end
 	end
 end
 assert(EntryPoints == 2, "Expected exactly one server and one client bootstrap")
+assert(next(Bootstraps) == nil, "A production bootstrap is missing or in the wrong service")
 
 local Compared = 0
 for _, Node in Local:GetDescendants() do

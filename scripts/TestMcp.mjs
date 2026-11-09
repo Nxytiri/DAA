@@ -52,7 +52,13 @@ try {
   const Calls = ToolName?.startsWith("@")
     ? JSON.parse(readFileSync(ToolName.slice(1), "utf8"))
     : ToolName ? [{ name: ToolName, arguments: ToolArguments }] : [];
-  const Catalog = await Request("tools/list", {});
+  const CatalogDeadline = Date.now() + 20000;
+  let Catalog = await Request("tools/list", {});
+  while (!Catalog.tools?.length && Date.now() < CatalogDeadline) {
+    await new Promise((Resolve) => setTimeout(Resolve, 1000));
+    Catalog = await Request("tools/list", {});
+  }
+  if (!Catalog.tools?.length) throw new Error("No Studio tools available; open Studio and enable its MCP server");
   for (const Call of Calls) {
     const Tool = Catalog.tools.find((Item) => Item.name === Call.name);
     if (!Tool) throw new Error("Unknown MCP tool: " + Call.name);

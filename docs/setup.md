@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Windows, Roblox Studio, Git, Node.js/npm, and [Aftman](https://github.com/LPGhatguy/aftman/releases).
+Windows, Roblox Studio, Git, Node.js **22 or newer** with npm, and [Aftman](https://github.com/LPGhatguy/aftman/releases).
 Aftman 0.3.0 is the final upstream release and is unmaintained; this repo uses it by owner choice.
 Install it with the release executable's `self-install` command.
 
@@ -90,7 +90,7 @@ can be configured privately if your usage requires it.
 ```powershell
 node scripts/TestMcp.mjs Roblox_Studio
 node scripts/TestMcp.mjs daa-studio get_connected_instances
-node --test tests/McpRouting.test.mjs
+node --test tests/McpRouting.test.mjs tests/McpDiscovery.test.mjs
 ```
 
 The first command lists tools; the second enumerates connected places.

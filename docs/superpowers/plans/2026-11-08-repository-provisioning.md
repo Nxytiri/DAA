@@ -37,11 +37,11 @@ Implement inline because the toolchain, sourcemap, and bootstrap share interface
 
 **Interfaces:** Setup installs packages, repairs exported types, generates `sourcemap.json`, and builds the canonical local place. Environment prepends Aftman's bin to process PATH. Staging owns `ReplicatedStorage.DAA`, `ServerScriptService.DAA`, and `StarterPlayer.StarterPlayerScripts.DAA` only; ProfileStore is server-only.
 
-- [ ] Install current stable tools through Aftman; verify actual executable versions.
-- [ ] Install exact Wally dependencies and generate the lockfile.
-- [ ] Add code-only project and local project reusing it with a baseplate and test mapping.
-- [ ] Build both projects and inspect the resulting trees for world exclusion and server-only packages.
-- [ ] Commit the toolchain and project foundation.
+- [x] Install current stable tools through Aftman; verify actual executable versions.
+- [x] Install exact Wally dependencies and generate the lockfile.
+- [x] Add code-only project and local project reusing it with a baseplate and test mapping.
+- [x] Build both projects and inspect the resulting trees for world exclusion and server-only packages.
+- [x] Commit the toolchain and project foundation.
 
 ### Task 2: Typed single-script bootstrap and verification
 
@@ -49,10 +49,10 @@ Implement inline because the toolchain, sourcemap, and bootstrap share interface
 
 **Interfaces:** Bootstrap calls `Loader.LoadChildren` on Services/Controllers, waits for all requires, runs every `Init(self): ()` synchronously, then dispatches each `Start(self): ()` using `Promise.try` with contextual rejection handling. Init failures halt startup. Tests are local-only modules. Check formats, analyzes, builds, and inspects output. Serve selects Local or Staging explicitly with distinct ports.
 
-- [ ] Write the place check first: assert exactly two production entry points, no tests/world in staging, and identical production source in local/staging output; run and observe missing-bootstrap failure.
-- [ ] Add minimal entry points using the installed Loader, plus local Studio lifecycle tests using temporary fixtures.
-- [ ] Run formatting, strict analysis, build inspection, and Lune checks; document real engine limits.
-- [ ] Commit the bootstrap and checks.
+- [x] Write the place check first: assert exactly two production entry points, no tests/world in staging, and identical production source in local/staging output; run and observe missing-bootstrap failure.
+- [x] Add minimal entry points using the installed Loader, plus local Studio lifecycle tests using temporary fixtures.
+- [x] Run formatting, strict analysis, build inspection, and Lune checks; document real engine limits.
+- [x] Commit the bootstrap and checks.
 
 ### Task 3: Native agents, MCPs, and documentation
 
@@ -60,8 +60,8 @@ Implement inline because the toolchain, sourcemap, and bootstrap share interface
 
 **Interfaces:** Three roles (luau-implementer, luau-reviewer, luau-verifier) follow shared rules and return bounded evidence. Native configs register `Roblox_Studio`, `daa-studio` (Chrrxs), and Context7 with no credentials. Windows launchers use supported command forms.
 
-- [ ] Create native configurations and concise role instructions; verify discovery/syntax with available CLIs.
-- [ ] Install matching Rojo and Chrrxs Studio plugins; handshake MCP servers and enumerate instances.
-- [ ] Build the document index and concise setup, architecture, conventions, workflow, and lore references.
-- [ ] Run local Studio tests if available; record any UI toggle/restart limitations.
-- [ ] Request fresh spec-compliance and quality review; resolve material findings, rerun checks, commit and integrate locally.
+- [x] Create native configurations and concise role instructions; verify discovery/syntax with available CLIs.
+- [x] Install matching Rojo and Chrrxs Studio plugins; handshake MCP servers and enumerate instances.
+- [x] Build the document index and concise setup, architecture, conventions, workflow, and lore references.
+- [x] Run local Studio tests if available; record any UI toggle/restart limitations.
+- [x] Request fresh spec-compliance and quality review; resolve material findings, rerun checks, commit and integrate locally.
