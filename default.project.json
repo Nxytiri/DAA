@@ -1,0 +1,42 @@
+{
+  "name": "DAA-Code",
+  "servePort": 34872,
+  "tree": {
+    "$className": "DataModel",
+    "$ignoreUnknownInstances": true,
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "DAA": {
+        "$className": "Folder",
+        "Shared": {
+          "$path": "src/Shared"
+        },
+        "Packages": {
+          "$path": "Packages"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$ignoreUnknownInstances": true,
+      "DAA": {
+        "$path": "src/Server",
+        "Packages": {
+          "$path": "ServerPackages"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "$ignoreUnknownInstances": true,
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$ignoreUnknownInstances": true,
+        "DAA": {
+          "$path": "src/Client"
+        }
+      }
+    }
+  }
+}

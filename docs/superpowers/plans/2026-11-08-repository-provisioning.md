@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- Bootstrap and tooling only; Aftman + Wally; all ten requested packages.
+- Bootstrap and tooling only; Aftman + Wally; all sixteen requested packages.
 - Exactly one production server Script and one client LocalScript; other code is modules.
 - Strict first-party Luau with the owner's three-line author header, PascalCase, UPPER_SNAKE_CASE constants, and private `_camelCase` fields.
 - No local world/test content in staging and no publishing, cloud upload, or remote push.
@@ -65,3 +65,4 @@ Implement inline because the toolchain, sourcemap, and bootstrap share interface
 - [ ] Build the document index and concise setup, architecture, conventions, workflow, and lore references.
 - [ ] Run local Studio tests if available; record any UI toggle/restart limitations.
 - [ ] Request fresh spec-compliance and quality review; resolve material findings, rerun checks, commit and integrate locally.
+

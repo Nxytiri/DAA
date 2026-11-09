@@ -1,0 +1,16 @@
+{
+  "luau-lsp.platform.type": "roblox",
+  "luau-lsp.sourcemap.rojoProjectFile": "local.project.json",
+  "luau-lsp.diagnostics.strictDatamodelTypes": true,
+  "luau-lsp.ignoreGlobs": [
+    "**/Packages/**",
+    "**/ServerPackages/**",
+    "**/.tools/**",
+    "**/.worktrees/**"
+  ],
+  "luau-lsp.sourcemap.rojoPath": "${env:USERPROFILE}/.aftman/bin/rojo.exe",
+  "[luau]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua",
+    "editor.formatOnSave": true
+  }
+}

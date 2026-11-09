@@ -1,0 +1,26 @@
+[package]
+name = "nxytiri/daa"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+private = true
+
+[dependencies]
+Trove = "sleitnick/trove@1.8.0"
+Signal = "sleitnick/signal@2.0.3"
+Promise = "evaera/promise@4.0.0"
+Comm = "sleitnick/comm@1.0.1"
+Input = "sleitnick/input@3.0.0"
+Component = "sleitnick/component@2.4.8"
+Spring = "sleitnick/spring@1.0.0"
+Shake = "sleitnick/shake@1.1.0"
+EnumList = "sleitnick/enum-list@2.1.0"
+Loader = "sleitnick/loader@2.0.0"
+Log = "sleitnick/log@0.1.2"
+Tree = "sleitnick/tree@1.1.0"
+TableUtil = "sleitnick/table-util@1.2.1"
+WaitFor = "sleitnick/wait-for@1.0.0"
+Timer = "sleitnick/timer@2.0.0"
+
+[server-dependencies]
+ProfileStore = "lm-loleris/profilestore@1.0.3"

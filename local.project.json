@@ -1,0 +1,60 @@
+{
+  "name": "DAA-Local",
+  "servePort": 34873,
+  "tree": {
+    "$path": "default.project.json",
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "FilteringEnabled": true
+      },
+      "Baseplate": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "Size": [
+            512,
+            20,
+            512
+          ],
+          "Position": [
+            0,
+            -10,
+            0
+          ],
+          "Color": [
+            0.35,
+            0.38,
+            0.4
+          ]
+        }
+      },
+      "Spawn": {
+        "$className": "SpawnLocation",
+        "$properties": {
+          "Anchored": true,
+          "Size": [
+            6,
+            1,
+            6
+          ],
+          "Position": [
+            0,
+            0.5,
+            0
+          ],
+          "Neutral": true
+        }
+      }
+    },
+    "ReplicatedFirst": {
+      "$className": "ReplicatedFirst",
+      "DAATests": {
+        "Fixtures": {
+          "$path": "tests/Fixtures"
+        },
+        "$path": "tests/Studio"
+      }
+    }
+  }
+}

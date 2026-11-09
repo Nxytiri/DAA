@@ -56,7 +56,7 @@ ModuleScripts. Each entry point loads its own flat startup folder through
 Sleitnick Loader, then starts the loaded modules. Shared utilities and nested
 helpers are never recursively auto-started. Startup modules do not yield or
 perform work at require time; asynchronous startup dependencies must be explicit.
-Modules communicate through direct requires, Signal, and Net where appropriate.
+Modules communicate through direct requires, Signal, and Comm where appropriate.
 No service locator, dependency container, or custom loader framework is added.
 
 The builder may choose the smallest typed lifecycle compatible with Loader.
@@ -101,12 +101,18 @@ Requested Wally dependencies, researched versions:
 | Trove | sleitnick/trove | 1.8.0 | shared |
 | Signal | sleitnick/signal | 2.0.3 | shared |
 | Promise | evaera/promise | 4.0.0 | shared |
-| Net | sleitnick/net | 0.2.0 | shared |
+| Comm (RemoteComm) | sleitnick/comm | 1.0.1 | shared |
+| Input | sleitnick/input | 3.0.0 | shared |
 | Component | sleitnick/component | 2.4.8 | shared |
 | Spring | sleitnick/spring | 1.0.0 | shared |
 | Shake | sleitnick/shake | 1.1.0 | shared |
 | EnumList | sleitnick/enum-list | 2.1.0 | shared |
 | Loader | sleitnick/loader | 2.0.0 | shared |
+| Log | sleitnick/log | 0.1.2 | shared |
+| Tree | sleitnick/tree | 1.1.0 | shared |
+| TableUtil | sleitnick/table-util | 1.2.1 | shared |
+| WaitFor | sleitnick/wait-for | 1.0.0 | shared |
+| Timer | sleitnick/timer | 2.0.0 | shared |
 | ProfileStore | lm-loleris/profilestore | 1.0.3 | server only |
 
 ProfileStore's official repository is MadStudioRoblox/ProfileStore, authored by
@@ -171,7 +177,7 @@ Prefer direct, small solutions and installed libraries; no speculative framework
 
 ## Acceptance and evidence
 
-1. A clean checkout installs pinned tools and all ten dependencies using the
+1. A clean checkout installs pinned tools and all sixteen dependencies using the
    documented Aftman/Wally workflow; commands resolve the intended versions.
 2. Formatting and strict Luau analysis pass with Roblox and dependency types.
 3. Focused dry-run checks pass; both Rojo projects build successfully.
@@ -206,3 +212,4 @@ No remote push, staging sync, cloud upload, or publication is part of acceptance
   [custom agents](https://antigravity.google/docs/subagents?tab=cli).
 
 Context7 was consulted for Rojo, Claude Code, and Antigravity CLI documentation.
+
