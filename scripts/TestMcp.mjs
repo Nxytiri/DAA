@@ -49,6 +49,20 @@ try {
     clientInfo: { name: "daa-smoke-check", version: "1.0.0" },
   });
   Child.stdin.write(JSON.stringify({ jsonrpc: "2.0", method: "notifications/initialized" }) + "\n");
+  const Calls = ToolName?.startsWith("@")
+    ? JSON.parse(readFileSync(ToolName.slice(1), "utf8"))
+    : ToolName ? [{ name: ToolName, arguments: ToolArguments }] : [];
+  const Catalog = await Request("tools/list", {});
+  for (const Call of Calls) {
+    const Tool = Catalog.tools.find((Item) => Item.name === Call.name);
+    if (!Tool) throw new Error("Unknown MCP tool: " + Call.name);
+    const Routes = ["instance_id", "studio_id", "multiplayer_group_id"]
+      .filter((Field) => Field in (Tool.inputSchema?.properties ?? {}));
+    if (Routes.length && !Routes.some((Field) =>
+      typeof Call.arguments?.[Field] === "string" && Call.arguments[Field].trim())) {
+      throw new Error(Call.name + " requires an explicit " + Routes.join(" or "));
+    }
+  }
   // Studio plugins reconnect on a backoff after this temporary server starts.
   if (ServerName === "daa-studio" && ToolName) {
     const Deadline = Date.now() + 20000;
@@ -67,16 +81,13 @@ try {
       await new Promise((Resolve) => setTimeout(Resolve, 1000));
     }
   }
-  const Calls = ToolName?.startsWith("@")
-    ? JSON.parse(readFileSync(ToolName.slice(1), "utf8"))
-    : ToolName ? [{ name: ToolName, arguments: ToolArguments }] : [];
   const Results = [];
   for (const Call of Calls) {
     const Value = await Request("tools/call", Call);
     Results.push({ name: Call.name, ...Value });
     if (Value.isError) process.exitCode = 1;
   }
-  const Result = Calls.length ? (ToolName.startsWith("@") ? Results : Results[0]) : await Request("tools/list", {});
+  const Result = Calls.length ? (ToolName.startsWith("@") ? Results : Results[0]) : Catalog;
   console.log(JSON.stringify({ server: Init.serverInfo, result: Result }, null, 2));
 } catch (ErrorValue) {
   console.error(ErrorValue.message);

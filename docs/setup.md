@@ -90,9 +90,11 @@ can be configured privately if your usage requires it.
 ```powershell
 node scripts/TestMcp.mjs Roblox_Studio
 node scripts/TestMcp.mjs daa-studio get_connected_instances
+node --test tests/McpRouting.test.mjs
 ```
 
 The first command lists tools; the second enumerates connected places.
+The routing check confirms that unscoped Studio execution is rejected before dispatch.
 The smoke client also accepts a tool name and JSON arguments, or `@path/to/calls.json`
 containing an array of `{ "name": "...", "arguments": {} }` requests.
 Keep a playtest sequence in one call so its temporary MCP server stays connected.
@@ -100,6 +102,7 @@ Only its own spawned process tree is stopped on exit.
 
 Enumerate Studio instances before mutations and pass the exact instance ID to every
 tool call. Local places have place ID zero; confirm their filename as well.
+The helper preflights every scoped call in a sequence for an explicit instance ID.
 Do not let an agent guess which of multiple Studio windows is safe to edit.
 The Windows built-in launcher runs from its own directory; npm MCP servers use `cmd.exe /c`.
 [Official Studio docs](https://create.roblox.com/docs/studio/mcp) and

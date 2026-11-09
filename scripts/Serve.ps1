@@ -1,4 +1,4 @@
-param([ValidateSet('Local','Staging')][string]$Target = 'Local')
+param([ValidateSet('Local','Staging')][string]$Target = 'Staging')
 . "$PSScriptRoot\Environment.ps1"
 
 $Project = if ($Target -eq 'Local') { 'local.project.json' } else { 'default.project.json' }

@@ -9,6 +9,7 @@
       "$ignoreUnknownInstances": true,
       "DAA": {
         "$className": "Folder",
+        "$ignoreUnknownInstances": false,
         "Shared": {
           "$path": "src/Shared"
         },
