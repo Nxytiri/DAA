@@ -8,6 +8,11 @@ This is a Roblox programming repository for Blackridge Complex; no gameplay is i
 - Default to typed OOP for stateful systems; use plain functions for stateless utilities.
 - Recover gracefully when safe; Init failures halt all remaining initialization and prevent Start.
 - Use Ponytail ultra: the smallest complete solution. No speculative framework, wrappers, or services.
+- Existing packages take precedence over native substitutes or custom implementations when they
+  cover the behavior. Check `wally.toml` and [package responsibilities](docs/conventions.md#package-use).
+  All Roblox diagnostics use Log (one logger per script/module); raw `print`/`warn` fail checks.
+  Native code is allowed only for package bootstrapping, assertions, deliberate failure fixtures,
+  or a documented runtime/API limitation. Document exceptions instead of silently bypassing packages.
 - All first-party Luau is strict. Begin files with `--//LuauProgrammer`, `--//ScriptName`,
   `--//YYYY-MM-DD`, then `--!strict`. Use the current America/New_York date for new files.
 - PascalCase identifiers; UPPER_SNAKE_CASE constants; `_camelCase` private fields.
@@ -19,8 +24,8 @@ This is a Roblox programming repository for Blackridge Complex; no gameplay is i
 - Packages are in `ReplicatedStorage.DAA.Packages`; ProfileStore is in
   `ServerScriptService.DAA.Packages`. RemoteComm uses `Comm.ServerComm` / `Comm.ClientComm`.
   Input is client-only at runtime. Keep upstream sources and headers intact.
-- Prefer Silo for observable state when needed and Option for explicit optional values;
-  keep simple fields and normal nil checks where they are clearer.
+- Use Silo for application state stores and Option for public values that model absence.
+  Ordinary local control-flow checks do not need to become state stores or Option objects.
 
 ## Commands and boundaries
 

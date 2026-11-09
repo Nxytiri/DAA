@@ -10,6 +10,7 @@ The coordinator assigns either spec-compliance or quality review; keep those pas
 Spec pass: check every requirement and excluded scope against the actual result.
 Quality pass: prioritize server trust boundaries, remote payload validation, persistence/session
 safety, startup races, client/server isolation, resource leaks, strict typing, and avoidable abstractions.
+Flag native/custom code that duplicates an installed package; verify Log and all package responsibilities.
 Read neighboring callers instead of reviewing only the diff. Follow available Superpowers and
 Ponytail review guidance. Return only actionable findings with severity, path/line, evidence,
 and the smallest suggested fix. If none, say so and name checks you could not perform.

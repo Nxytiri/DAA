@@ -33,7 +33,7 @@ Earlier Init effects are not rolled back. Prefer validation and state setup in I
 acquire running connections/tasks in Start so a failed initialization does not leave a
 half-running service. A non-terminating require/Init blocks startup by design.
 
-Start failures are caught and logged with their module name through Promise. Recoverable
+Start failures are caught through Promise and reported by Log with their module name. Recoverable
 runtime failures should have explicit fallbacks, bounded retries, cleanup, and logging.
 Never swallow an error and leave corrupt state. A catch attached to a Start Promise does
 not catch detached `task.spawn` callbacks or unreturned Promises: those owners must handle
@@ -49,7 +49,8 @@ Use Input on the client only; use Trove for owned connections/tasks/instances.
 ProfileStore stays server-only and is installed without inventing a player-data schema.
 
 All eighteen requested libraries are pinned in `wally.toml`.
-Installing a library does not require wrapping or using it before a feature needs it.
+When a feature needs a package's responsibility, that package is mandatory instead of a
+native substitute or competing implementation. See [package-use enforcement](conventions.md#package-use).
 
 ## Rojo boundary
 

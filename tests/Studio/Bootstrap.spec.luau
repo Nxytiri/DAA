@@ -6,6 +6,8 @@
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local ServerScriptService = game:GetService("ServerScriptService")
+local Log = require(game:GetService("ReplicatedStorage").DAA.Packages.Log)
+local Logger = Log.new()
 
 return function(Case: string?): ()
 	local IsServer = RunService:IsServer()
@@ -70,5 +72,5 @@ return function(Case: string?): ()
 	end)
 	TestRoot:Destroy()
 	assert(Success, tostring(Message))
-	print("Bootstrap checks passed: " .. (if IsServer then "server" else "client"))
+	Logger:AtInfo():Log("Bootstrap checks passed: " .. (if IsServer then "server" else "client"))
 end

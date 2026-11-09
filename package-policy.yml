@@ -1,0 +1,13 @@
+globals:
+  print:
+    args:
+      - type: "..."
+        required: false
+    deprecated:
+      message: "Use the installed Log package: Logger:AtInfo():Log(message)."
+  warn:
+    args:
+      - type: "..."
+        required: false
+    deprecated:
+      message: "Use the installed Log package: Logger:AtWarning():Log(message)."

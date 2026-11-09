@@ -13,7 +13,7 @@ From the repository in PowerShell:
 .\scripts\Check.ps1
 ```
 
-Aftman may request first-use trust for the six publishers in `aftman.toml`.
+Aftman may request first-use trust for the tool repositories in `aftman.toml`.
 Review and approve the pinned tool sources using `aftman trust <owner/repository>`.
 Setup installs Wally packages, Lune definitions, pinned Roblox definitions, exported package
 types, the sourcemap, and the local place. `-StudioPlugins` installs matching Rojo and Chrrxs
@@ -45,7 +45,7 @@ The tracked baseplate is reproducibly generated; never edit it manually.
 Working copies are ignored. Commit Luau source, project files, manifests, lockfile, and docs.
 Setup/Check rebuild the canonical place without overwriting working copies.
 
-Check runs formatting, strict Roblox analysis, both place builds, and a Lune inspection of
+Check runs formatting, Selene's package policy, strict Roblox analysis, both place builds, and a Lune inspection of
 their boundaries and script sources. Lune can dry-run pure Luau; it cannot validate engine
 replication, DataStores, physics, or player input.
 

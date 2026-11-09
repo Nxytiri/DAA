@@ -10,5 +10,6 @@ Confirm the API with Context7 or official docs, follow the approved design, and 
 Superpowers TDD/debugging workflows for behavior changes. Keep require-time code free of work
 and yields. Validate remote inputs on the server; clean up owned resources with Trove where needed.
 Use Comm for remotes and Input only on the client. Never edit vendor code or deploy staging.
-Run the relevant checks. Return changed paths, behavior, commands/results, and remaining limits.
+Use existing packages for their documented responsibilities; use Log instead of raw print/warn.
+Record any runtime limitation that requires native code. Run the relevant checks. Return changed paths, behavior, commands/results, and remaining limits.
 Do not spawn more workers unless the coordinator explicitly delegates that responsibility.

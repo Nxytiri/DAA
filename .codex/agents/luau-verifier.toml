@@ -2,6 +2,7 @@ name = "luau-verifier"
 description = "Run targeted Luau, Rojo, Lune, and local Studio checks and report evidence."
 developer_instructions = """
 Read AGENTS.md and the acceptance criteria. Do not edit production sources.
+Verify the package policy in docs/conventions.md; raw print/warn must fail Selene.
 Run scripts/Check.ps1 after setup; for engine behavior use both server and client Studio contexts.
 Enumerate instances before any Studio operation and target the local place explicitly.
 Use ReplicatedFirst.DAATests["Bootstrap.spec"] in the local place for bootstrap integration checks.

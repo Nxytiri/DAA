@@ -30,8 +30,45 @@ Use explicit cleanup for resources the object owns, usually through Trove.
 A service/controller can be a singleton object with Init and Start hooks. Stateless
 helpers can remain functions. Avoid inheritance trees, class registries, a custom class
 framework, dependency injection containers, and getters that add no behavior.
-Use Silo when a system needs observable state and Option when explicit optional values
-make nil handling safer. These are available tools, not a requirement to wrap every field.
+Use Silo for application state stores and Option for public values that model absence.
+Ordinary local control-flow checks remain normal Luau checks.
+
+## Package use
+
+Use an installed package whenever it covers the behavior being implemented. Do not replace
+it with a native substitute, copy its implementation, or build a competing abstraction.
+Check the installed version and API before coding. Adding a feature does not mean eagerly
+constructing every package: use each one when its responsibility is needed.
+
+| Responsibility | Required package |
+| --- | --- |
+| Roblox diagnostics, severity, contextual error reports | Log; one logger per script/module |
+| Owned connections, tasks, instances, and cleanup | Trove |
+| Local events | Signal |
+| Async composition, cancellation, recoverable failures | Promise |
+| Client/server remotes | Comm / ServerComm / ClientComm |
+| Player input | Input, on the client |
+| Tag-based component lifecycle | Component |
+| Spring motion and camera shake | Spring and Shake |
+| Custom enumerations | EnumList |
+| Startup module discovery | Loader |
+| Instance-tree navigation and async instance availability | Tree and WaitFor |
+| Table operations covered by the installed API | TableUtil |
+| Recurring timers | Timer |
+| Application state stores | Silo |
+| Public optional values | Option |
+| Persistent profiles and session ownership | ProfileStore, server only |
+
+`scripts/Check.ps1` runs Selene with `package-policy.yml`: raw `print` and `warn`,
+including aliases of those globals, are errors in first-party Roblox code and Studio tests.
+Other package responsibilities require semantic review; implementers and reviewers must check
+the table above. Do not suppress the lint to bypass this policy.
+
+Exceptions are narrow: native APIs needed to obtain the packages themselves (such as bootstrap
+`WaitForChild`), assertion primitives and deliberate failure/scheduling fixtures in tests,
+and host tools that cannot run Roblox packages (PowerShell, Node, Lune). Host stdout remains
+native. Preserve vendor sources, including their internal uses of native APIs. Record any
+additional runtime/API incompatibility in the affected system document and explain it in review.
 
 ## Errors and comments
 

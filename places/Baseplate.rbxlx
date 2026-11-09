@@ -16110,8 +16110,10 @@ return {}
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Loader = require(ReplicatedStorage.DAA.Packages.Loader)
+local Log = require(ReplicatedStorage.DAA.Packages.Log)
 local Promise = require(ReplicatedStorage.DAA.Packages.Promise)
 local Types = require(ReplicatedStorage.DAA.Shared.Types)
+local Logger = Log.new()
 
 local Services: { [string]: Types.Startup } = Loader.LoadChildren(script.Parent.Services)
 for _, Service in Services do
@@ -16120,7 +16122,7 @@ end
 
 for Name, Service in Services do
 	Promise.try(Service.Start, Service):catch(function(Message: unknown)
-		warn(("[DAA/%s] Start failed: %s"):format(Name, tostring(Message)))
+		Logger:AtError():Log(("[DAA/%s] Start failed: %s"):format(Name, tostring(Message)))
 	end)
 end
 ]]></string>
@@ -18433,8 +18435,10 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local DAA = ReplicatedStorage:WaitForChild("DAA")
 local Loader = require(DAA:WaitForChild("Packages"):WaitForChild("Loader"))
+local Log = require(DAA.Packages:WaitForChild("Log"))
 local Promise = require(DAA.Packages:WaitForChild("Promise"))
 local Types = require(DAA:WaitForChild("Shared"):WaitForChild("Types"))
+local Logger = Log.new()
 
 local Controllers: { [string]: Types.Startup } =
 	Loader.LoadChildren(script.Parent:WaitForChild("Controllers"))
@@ -18444,7 +18448,7 @@ end
 
 for Name, Controller in Controllers do
 	Promise.try(Controller.Start, Controller):catch(function(Message: unknown)
-		warn(("[DAA/%s] Start failed: %s"):format(Name, tostring(Message)))
+		Logger:AtError():Log(("[DAA/%s] Start failed: %s"):format(Name, tostring(Message)))
 	end)
 end
 ]]></string>
@@ -18477,6 +18481,8 @@ end
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local ServerScriptService = game:GetService("ServerScriptService")
+local Log = require(game:GetService("ReplicatedStorage").DAA.Packages.Log)
+local Logger = Log.new()
 
 return function(Case: string?): ()
 	local IsServer = RunService:IsServer()
@@ -18541,7 +18547,7 @@ return function(Case: string?): ()
 	end)
 	TestRoot:Destroy()
 	assert(Success, tostring(Message))
-	print("Bootstrap checks passed: " .. (if IsServer then "server" else "client"))
+	Logger:AtInfo():Log("Bootstrap checks passed: " .. (if IsServer then "server" else "client"))
 end
 ]]></string>
         </Properties>

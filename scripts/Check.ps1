@@ -1,6 +1,7 @@
 . "$PSScriptRoot\Environment.ps1"
 
 Invoke-Tool stylua @('--check','src','tests')
+Invoke-Tool selene @('--pattern','**/*.luau','--','src','tests/Studio','tests/Fixtures','tests/Failures')
 Invoke-Tool node @('--test','tests/McpDiscovery.test.mjs')
 Invoke-Tool rojo @('sourcemap','local.project.json','-o','sourcemap.json')
 Invoke-Tool luau-lsp @('analyze','--platform=roblox','--definitions=.tools/Roblox.d.luau','--sourcemap=sourcemap.json','--ignore=**/Packages/**','--ignore=**/ServerPackages/**','src','tests/Studio','tests/Fixtures','tests/Failures')

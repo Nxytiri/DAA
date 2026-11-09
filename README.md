@@ -15,5 +15,5 @@ Local Rojo uses port **34873**. When an update is ready, serve **Staging** on **
 and connect the actual cloud staging place in Studio. Review the diff before syncing.
 The staging mapping owns only DAA code/package folders; publishing remains a separate Studio action.
 
-Windows tooling uses Aftman, Wally, Rojo, luau-lsp, Lune, and StyLua.
+Windows tooling uses Aftman, Wally, Rojo, luau-lsp, Lune, StyLua, and Selene.
 Codex and Antigravity read `AGENTS.md`; Claude imports it from `CLAUDE.md`.
