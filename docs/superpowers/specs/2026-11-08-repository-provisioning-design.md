@@ -1,6 +1,6 @@
 # DAA repository provisioning
 
-Status: proposed for approval. Date: 2026-11-08 (America/New_York).
+Status: approved by the owner. Date: 2026-11-08 (America/New_York).
 
 ## Intent
 

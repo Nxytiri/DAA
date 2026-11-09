@@ -1,0 +1,13 @@
+.worktrees/
+.superpowers/
+.tools/
+Packages/
+ServerPackages/
+sourcemap.json
+build/
+places/*.working.rbxl*
+*.rbxl.lock
+*.rbxlx.lock
+.env
+.env.*
+.claude/settings.local.json
